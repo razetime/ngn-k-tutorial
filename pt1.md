@@ -79,7 +79,13 @@ The default way of defining multi-element arrays is as follows:
 ```
 (<noun1>; <noun2>; <noun3>)
 ```
-You can also use newlines instead of semicolons to separate array elements.
+You can also use a newline and a space instead of semicolons to separate array elements, so:
+```
+(<noun1>
+ <noun2>
+ <noun3>)
+```
+is also valid array syntax.
 
 A single element array of any type can be defined with `enlist`, which is `,`.
 ```
@@ -88,7 +94,8 @@ A single element array of any type can be defined with `enlist`, which is `,`.
 ,`symbol
 ```
 
-It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`.
+It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`.  I'd like to introduce you to your first K function: enlist.
+`,`, when called with 1 argument enlists its argument. It makes a single element array containing the given value.
 
 
 Strings/character arrays can be made by putting characters in double quotes, as you saw in the Hello World example. 
