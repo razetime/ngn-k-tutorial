@@ -28,7 +28,7 @@ If you want the result to be 7, then you have to use parentheses:
 
 ```
  (2 * 2) + 3
-7
+
 ```
 
 Where most languages have keywords, K has single characters. These characters are called primitives, and these primitives are the lifeblood of K. K has exactly 23 significant symbols that you can create programs with, called primitive verbs. Using these 23 primitive symbols and their many overloads, you can create any program you like.
@@ -50,22 +50,6 @@ To actually display a string without K's formatting, you can do this:
 In this program, <code>\` 0:</code> is the equivalent of a print statement in any other language. It will print a simple character array given to it with a newline at the end. You can change it to <code>\` 1:</code> if you want to display without a newline.
 
 Reminder: K is right to left language. This means that it has no precendence rules other than executing everything from right to left. So, Hello World is read first, then 0:, then the backtick.
-
-Let us take an example:
-```
-4 * 5 + 9
-```
-Based on primary school math rules, this evaluates to 29. However, K's rules are much simpler: just read everything directly from right to left. For a more visual understanding, here are the steps:
-
-```
-4 * 5 + 9
-    |---|
-
-4 * 14
-|----|
-
-56
-```
 
 The other major part of our Hello world program is the character array, which brings us to the lego bricks of the array-based language: the arrays.
 
