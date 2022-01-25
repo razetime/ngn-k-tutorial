@@ -86,6 +86,18 @@ A single element array of any type can be defined with `enlist`, which is `,`.
 It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`.  I'd like to introduce you to your first K function: enlist.
 `,`, when called with 1 argument enlists its argument. It makes a single element array containing the given value.
 
+---
+
+### `,x` Enlist
+
+**Symbol:** `,`
+
+**Args:** `, any_value`
+
+**Description:** Create a single element array containing `x`.
+
+---
+
 
 Strings/character arrays can be made by putting characters in double quotes, as you saw in the Hello World example. 
 ```
