@@ -37,9 +37,8 @@ You can also assign functions to variables. The default method of defining funct
 ```
  plus:{x+y}
  plus[1;2]
+3
 ```
-
-Gives the result of `1+2`.
 
 But where do `x` and `y` come from? Every K function has three default arguments: `x`, `y` and `z`, if the arguments are not defined beforehand. To name the arguments yourself, you can put them in square brackets:
 
