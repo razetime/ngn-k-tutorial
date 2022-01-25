@@ -1,72 +1,94 @@
-# K tutorial part 2: Arrays, Dictionaries and Functions.
+# Part 2: Defining Variables
 
-K is 0-indexed, which means arrays start at 0.
+To define a variable, you type its name followed by a colon:
 
-Indexing into an array takes the element at the given index and returns it.
-
-Indexing into a dictionary takes the value that corresponds to a given key, and returns it.
-
-Passing values to a function will return its corresponding result.
-
-So why Arrays, dictionaries and functions together? Because they all do one single thing: They take a set of values, and return a single value. K hence treats them as the same thing: application.
-
-The first method of application is called **at**. 
-
-`f@x`
-**Name:** At
-**Symbol:** `@`
-**Args:** `func/array/dict` `@` `array/atom`
-**Description:** Applies a noun `f` given on its left to a single argument `x` given on its right.
-
-For a function, `@` treats `x` like it is a single value, and provides it to `f`.
-
-`- @ 1` gives `-1`.
-
-For a dictionary or an array, `@` can take a single index:
-
-``(`a`b`c!1 2 3) @ `a`` -> `1`
-`67 78 89 @ 1` -> `78`
-
-or an array of indices:
-``(`a`b`c!1 2 3) @ `a`c`b`` -> `1 3 2`
-`67 78 89 @ 0 2` -> `67 89`
-
-all forms of application behave in this manner i.e. they will always index into atomic values and preserve the shape of the indices.
-
-If you index outside of an array's length, you will get a null value corresponding to the type of the array:
-
-`67 78 89 @ 56` -> `0N`
-
-
-The second form of application is called the M-expression, which may be familiar to people coming from the Lisp language. The M-expression is the most general form of application, and it assumes the form of `noun[args]`.
-
-for a function call, you can do `f[a;b;c]`. Remember that function calls include semicolons.
-
-this means that `+[1;2]` is the same as `1+2`, and you can effectively translate most K programs to use M-expressions only.
-
-For an array, each argument indexes into a different dimension:
-
-taking an array  like the following:
 ```
- :a:3 3#!9
-(0 1 2
- 3 4 5
- 6 7 8)
- ```
-you can do `a[1;2]` to get 5, and `a[0;0]` to get 1.
+one: 1
+```
 
-Like with @, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `2 5`.
+Assigns the number 1 to the variable `one`. You can then use `one` anywhere you like. Yay! 
 
-The final form of application is dot (`.`).
+You can assign any noun to a variable. For example, a dictionary can be named with:
 
-`f.x`
-**Name:** Dot
-**Symbol:** `.`
-**Args:** `func/array/dict` `@` `array`
-**Description:** Applies a noun `f` given on the arguments given in array `x`.
+```
+dict: `a`b`c ! 1 2 3
+```
 
-Dot application takes a noun on the left, and an array on the right. Each array element is taken as an argument.
+Creates a dictionary `dict` with key-value pairs `` `a:1; `b:2; `c:3``
 
-`+ . 1 2` is the same as `1 + 2`.
 
-from the previous example, `a[1;2]` can be rewritten as `a . 1 2`, and `a[0;0]` is `a . 0 0`.
+---
+
+### `x!y` Create Dict
+
+**Symbol:** `!`
+
+**Args:** `array ! array`
+
+**Description:** Create a dict with keys `x` and values `y`. `x` and `y` must be of equal length.
+
+---
+
+
+You can get values from a dict using square brackets: ``dict[`a]`` will give you `1`.
+
+You can also assign functions to variables. The default method of defining functions in K is to create a lambda. For example:
+
+```
+{x+y}[1;2]
+```
+
+Gives the result of `1+2`.
+
+But where do `x` and `y` come from? Every K function has three default arguments: `x`, `y` and `z`, if the arguments are not defined beforehand. To name the arguments yourself, you can do:
+
+```
+{[firstnum;secondnum] firstnum+secondnum}[1;2]
+```
+
+which also does the same thing. If you'd like to document your code, named arguments can be quite useful, but K code is generally short enough to be understood with the default arguments.
+
+Functions can have multiple statements separated by semicolons:
+
+```
+  {x+y; x-y}[1;2]
+-1
+```
+
+A function will always return its last expression, unless specifically told to with the help of `:`. Any expression which starts with a `:` will be returned, and immediately exit from a function:
+```
+ {:x+y; x-y}[1;2]
+3
+```
+
+A function can reference itself with the special variable `o`. A recursive factorial, for example, is
+```
+{$[x>1; x*o[x-1]; 1]}
+```
+
+So what does the `$` do? `$` is the K equivalent of an if statement. You *must* give `$` at last 3 arguments for a conditional.
+
+`$[condition; true; false]` or `$[condition1; true1; condition2; true2; ...; false]`
+
+---
+### `$[;;..]` If
+
+**Symbol:** `$`
+
+**Arguments:** Any number 
+
+**Description:** K's If statement.
+
+---
+
+To group multiple statements in an if-else, you can use a progn (lisp term), which is a bunch of statements inside square brackets:
+
+```
+ {$[1;[a:x+y;a];0]}[5;6]
+11
+```
+A progn, similar to a function, will always return its last statement unless told otherwise with the help of `:`.
+
+
+
+
