@@ -20,11 +20,16 @@ To start with K, you have to first understand right to left evaluation. Take thi
 
 `2 * 2 + 3`
 
-Generally, you would do `(2 * 2) + 3` , which equals 7. However, K does not care about primary school rules like PEMDAS. K always read from right to left. Parentheses group things to make them execute first. So,
+Generally, you would do `2 * 2` first, then add 3, which equals 7. However, K does not care about primary school rules like PEMDAS. K always read from right to left. Parentheses group things to make them execute first. So,
 
 `2 * 2 + 3` = `2 * (2 + 3)` = 10.
 
-If you want the result to be 7, then you have to use the parentheses shown earlier.
+If you want the result to be 7, then you have to use parentheses:
+
+```
+ (2 * 2) + 3
+7
+```
 
 Where most languages have keywords, K has single characters. These characters are called primitives, and these primitives are the lifeblood of K. K has exactly 23 significant symbols that you can create programs with, called primitive verbs. Using these 23 primitive symbols and their many overloads, you can create any program you like.
 
