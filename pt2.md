@@ -35,7 +35,8 @@ You can get values from a dict using square brackets: ``dict[`a]`` will give you
 You can also assign functions to variables. The default method of defining functions in K is to create a lambda. For example:
 
 ```
-{x+y}[1;2]
+ plus:{x+y}
+ plus[1;2]
 ```
 
 Gives the result of `1+2`.
