@@ -40,13 +40,13 @@ You can also assign functions to variables. The default method of defining funct
 
 Gives the result of `1+2`.
 
-But where do `x` and `y` come from? Every K function has three default arguments: `x`, `y` and `z`, if the arguments are not defined beforehand. To name the arguments yourself, you can do:
+But where do `x` and `y` come from? Every K function has three default arguments: `x`, `y` and `z`, if the arguments are not defined beforehand. To name the arguments yourself, you can put them in square brackets:
 
 ```
 {[firstnum;secondnum] firstnum+secondnum}[1;2]
 ```
 
-which also does the same thing. If you'd like to document your code, named arguments can be quite useful, but K code is generally short enough to be understood with the default arguments.
+which also does the same thing. If you'd like to document your code, named arguments can be quite useful, but K functions are generally short enough to be understood with the default arguments.
 
 Functions can have multiple statements separated by semicolons:
 
@@ -68,7 +68,18 @@ A function can reference itself with the special variable `o`. A recursive facto
 
 So what does the `$` do? `$` is the K equivalent of an if statement. You *must* give `$` at last 3 arguments for a conditional.
 
-`$[condition; true; false]` or `$[condition1; true1; condition2; true2; ...; false]`
+effectively, this translates to the following pseudocode:
+
+```
+function(int x) {
+    if (x > 1) {
+        return x * o(x - 1);
+    } else {
+        return 1;
+    }
+}
+```
+
 
 ---
 ### `$[;;..]` If
@@ -77,7 +88,7 @@ So what does the `$` do? `$` is the K equivalent of an if statement. You *must* 
 
 **Arguments:** Any number 
 
-**Description:** K's If statement.
+**Description:** K's If statement. `$[condition; true; false]` or `$[condition1; true1; condition2; true2; ...; false]`.
 
 ---
 
