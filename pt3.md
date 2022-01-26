@@ -70,7 +70,7 @@ The final form of application is dot (`.`).
 
 **Symbol:** `.`
 
-**Args:** `(func/array/dict) . (array)`
+**Args:** `noun . array`
 
 **Description:** Applies a noun `f` given on the arguments given in array `x`.
 
@@ -78,7 +78,7 @@ The final form of application is dot (`.`).
 
 Dot application takes a noun on the left, and an array on the right. Each array element is taken as an argument.
 
-`+ . 1 2` is the same as `1 + 2`.
+`(+) . 1 2` is the same as `1 + 2`. Since `+` is a primitive, you must put it in parentheses to make it a noun before giving it to `.`.
 
 from the previous example, `a[1;2]` can be rewritten as `a . 1 2`, and `a[0;0]` is `a . 0 0`.
 
@@ -108,7 +108,7 @@ here, `{a+x}` can't see the value of a, since `a` is outside of its block, and `
 To fix this, we should instead pass `a` via projection:
 
 ```
- f:{a:x;{[x+y}[a]}[1]
+ f:{a:x;{x+y}[a]}[1]
  f[3]
 4
 ```

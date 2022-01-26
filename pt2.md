@@ -66,7 +66,7 @@ A function can reference itself with the special variable `o`. A recursive facto
 {$[x>1; x*o[x-1]; 1]}
 ```
 
-So what does the `$` do? `$` is the K equivalent of an if statement. You *must* give `$` at last 3 arguments for a conditional.
+So what does the `$` do? `$` is the K equivalent of an if statement. You *must* give `$` at least 3 arguments for a conditional.
 
 effectively, this translates to the following pseudocode:
 

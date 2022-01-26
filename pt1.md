@@ -83,7 +83,7 @@ A single element array of any type can be defined with `enlist`, which is `,`.
 ,`symbol
 ```
 
-It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`.  I'd like to introduce you to your first K function: enlist.
+It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`. I'd like to introduce you to your first K function: enlist.
 
 ---
 
@@ -98,7 +98,8 @@ It's important to understand that just `"a"` is a character, not a string. `,"a"
 ---
 
 
-Strings/character arrays can be made by putting characters in double quotes, as you saw in the Hello World example. 
+Strings/character arrays can be made by putting multiple characters in double quotes, as you saw in the Hello World example. A single character string cannot be made with double quotes, since a single character in quotes is considered a character, as shown earlier.
+
 ```
 "Hello, world!"
 "This is a K string"
