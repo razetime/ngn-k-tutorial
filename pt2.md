@@ -40,6 +40,8 @@ You can also assign functions to variables. The default method of defining funct
 3
 ```
 
+
+
 But where do `x` and `y` come from? Every K function has three default arguments: `x`, `y` and `z`, if the arguments are not defined beforehand. To name the arguments yourself, you can put them in square brackets:
 
 ```
@@ -100,6 +102,16 @@ To group multiple statements in an if-else, you can use a progn (lisp term), whi
 ```
 A progn, similar to a function, will always return its last statement unless told otherwise with the help of `:`.
 
+## Scoping
 
+You can define variables *within* functions as well, and you can use them within the function only. This means that
+```
+{a:5; {a}[]}
+```
 
+will give you an error. Instead, you can define a global variable using `::`:
+```
+{a::5; {a}[]}
+```
 
+However, this means that the entire program will have access to variable `a`. Global variables are best kept to a minimum in K, and we will see more ways to write our programs without them.

@@ -88,11 +88,11 @@ K lets you omit arguments in application.
 
 For functions, omitting arguments implies *partial application*:
 
-`-[1]` or `-[;1]` is a function that does `1-x` given an `x`.
+`-[1]` or `-[1;]` is a function that does `1-x` given an `x`.
 
 `-[;1]` is a function that does `x-1` given an x. Basically, Projections will fill in values that you have left empty. 
 
-Projections are often used to pass in outside data to a functions, since variables in ngn/k are limited to being local only. 
+Projections are often used to pass in outside data to a functions. This is a common method of omitting global variables, and passing data to inner blocks in K.
 
 For example, this snippet should return a function that adds `a` to its argument.
 
