@@ -1,6 +1,10 @@
 # ngn-k-tutorial
 An ngn/k tutorial. These are scripts for future videos, but can be used as learning material as is.
 
+## TODOS
+- all parts need exercises
+- modified assignment in p2
+
 ## How to use this tutorial
 
 This tutorial assumes you have some beginner programming knowledge, and a basic understanding of arrays.
@@ -19,4 +23,4 @@ Primitive data will be given in this format:
 
 ---
 
-Each part of this tutorial will have `Vocabulary` and `Exercise` sections at the end. I suggest getting familiar with the vocabulary and doing the exercises in each part before moving on the next lesson. 
+Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary and doing the exercises in each part before moving on the next lesson. 
