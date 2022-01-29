@@ -112,3 +112,5 @@ To fix this, we should instead pass `a` via projection:
  f[3]
 4
 ```
+
+as compared to assigning to a globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side effect free. This is not only useful in K, but helps for any programming task in general.
