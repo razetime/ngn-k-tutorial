@@ -60,7 +60,7 @@ The things that you can put in an array are called Nouns. These can be:
 - Other Arrays
 - Functions and dictionaries, which we will discuss later. 
 
-Verbs are primitive functions. K has 19 primitive verbs, each identified by a single character. When you put a primitive verb inside an array, it will automatically be converted to a noun.
+Verbs are primitive functions. K has 19 primitive verbs, each identified by a single character. When you put a primitive verb inside an array, it will automatically be converted to a noun. A verb can take one or two arguments, and can have multiple meanings based on what data the verb is given.
 
 Adverbs are primitive higher order functions. Adverbs can take a verb on the left and create a new verb with modified functionality. Some adverbs also behave like verbs if they are not given a verb argument.
 
@@ -83,7 +83,7 @@ A single element array of any type can be defined with `enlist`, which is `,`.
 ,`symbol
 ```
 
-It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`. I'd like to introduce you to your first K function: enlist.
+It's important to understand that just `"a"` is a character, not a string. `,"a"`, however, is an array contraining the character `"a"`. I'd like to introduce you to your first K verb: enlist.
 
 ---
 
@@ -150,4 +150,28 @@ Are also valid K expressions. All basic arithmetic operators support conforming 
 
 Some primitives in K conform only to one side. The ones that conform to the left are called left atomic, because they penetrate to the atoms of the left argument. The same goes for right atomic primitives.
 
+
+Every verb in K can take 1 or two arguments of often varying types. For example, the above arithmetic primitives perform very different things whaen they are given one argument:
+
+| Verb      | What it does
+| --------- | --------
+| `+`       | Flip (Transpose)
+| `-`       | Negate
+| `*`       | First (element of an array)
+| `%`       | Square root
+
+You can append a colon `:` after a verb to make sure that it executes with only one argument (monadic).
+
+
 K has 32 primitive symbols, including digraphs(2 symbol combinations). Each of these symbols has type and arity(argument number) overloads, leading to over 70+ primitive verbs and adverbs for the K programmer to use. Every primitive has an important usecase, and remembering these is often hard for beginners. However, once you get the hang of them, you will have the tools to create any program you like. We will be covering the functionality of K's primitives and their basic usecases in this tutorial. 
+
+
+## Vocabulary from this lesson
+
+- Noun: any defined value.
+- Verb: is a primitive function that can be used infix, and operates on nouns.
+- Adverb: is a primitive higher order function that creates a new function from a given verb, or function noun.
+- Atom: is any value that is not an array (symbol, character, integer, float).
+- Monad(ic): Single argument function.
+- Dyad(ic): Two argument function.
+- Conforming: an operation that works on the atoms of its arguments.

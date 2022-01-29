@@ -113,4 +113,4 @@ To fix this, we should instead pass `a` via projection:
 4
 ```
 
-as compared to assigning to a globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side effect free. This is not only useful in K, but helps for any programming task in general.
+as compared to assigning to `a` globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side effect free. This is not only useful in K, but helps for any programming task in general.

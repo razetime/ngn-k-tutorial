@@ -1,4 +1,4 @@
-# Part 2: Defining Variables
+# Part 2: Functions and Defining Variables
 
 To define a variable, you type its name followed by a colon:
 
@@ -40,7 +40,9 @@ You can also assign functions to variables. The default method of defining funct
 3
 ```
 
+creates a function `plus` and passes the arguments 1 and 2 to it.
 
+Function call syntax applies to Verbs as well, so `+[1;2]` is perfectly valid K (and a better way to put this).
 
 But where do `x` and `y` come from? Every K function has three default arguments: `x`, `y` and `z`, if the arguments are not defined beforehand. To name the arguments yourself, you can put them in square brackets:
 
@@ -115,3 +117,38 @@ will give you an error. Instead, you can define a global variable using `::`:
 ```
 
 However, this means that the entire program will have access to variable `a`. Global variables are best kept to a minimum in K, and we will see more ways to write our programs without them.
+
+## Trains
+
+A *train* is a way of representing simple function composition.
+
+There are some important things to remember when writing trains:
+- A train is a list of verbs, and their left arguments if applicable.
+- A verb with a `:` after it will only be called with one argument. Without the colon, it is always called with two arguments. This applies to all places where you use verbs, but is especially useful in trains.
+- A verb which does not have a `:` after it *must* have a left argument specified i.e `(+-)` is not a valid train but `(1+-)` is, since `+` is given left argument `1` and `+:-` is, since `+` only takes a single argument.
+- Every primitive in train must have its *arity* specified with the help of `:`.
+- The arity of the last verb of a train determines its arity. eg: `(f g h)` translates to `{f[g[h[x;y]]]}`, and `(f g h:)` translates to `{f[g[h[x]]]}`.
+
+Trains are a way of representing really simple functions, where a list of functions is applied to one or two values. For example, here is a function that displays the first `x` odd numbers:
+
+```
+odds:{1+2*!x}
+```
+
+What this is doing is:
+a) Generating a range 0..x-1 - `!x`
+b) multiplying it by 2 (conforming) - `2*`
+c) adding 1 to it (conforming) - `1+`
+
+to convert this to a train, we have to specify arities:
+- `!` is called monadically: `!:`
+- `*` is called dyadically: `2*`
+- `+` is called dyadically: `1+`
+
+So what we finally get is:
+
+```
+odds: 1+2*!:
+```
+
+##
