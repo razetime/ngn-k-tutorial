@@ -151,4 +151,6 @@ So what we finally get is:
 odds: 1+2*!:
 ```
 
-##
+## Vocabulary from this lesson
+
+- Variable: a name that is assigned a value.
