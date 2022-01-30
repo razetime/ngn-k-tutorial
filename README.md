@@ -5,6 +5,9 @@ An ngn/k tutorial. These are scripts for future videos, but can be used as learn
 - all parts need exercises
 - modified assignment in p2
 
+Monadic verbs introduced: `+-*%,`
+Dyadic verbs introduced: `+-*%`
+
 ## How to use this tutorial
 
 This tutorial assumes you have some beginner programming knowledge, and a basic understanding of arrays.
