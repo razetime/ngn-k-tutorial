@@ -33,7 +33,9 @@ If you want the result to be 7, then you have to use parentheses:
 
 Where most languages have keywords, K has single characters. These characters are called primitives, and these primitives are the lifeblood of K. K has exactly 23 significant symbols that you can create programs with, called primitive verbs. Using these 23 primitive symbols and their many overloads, you can create any program you like.
 
-The easiest way to run ngn/k is to go to the online interpreter, available at https://ngn.bitbucket.io/k/. I recommend using the online interpreter until you get comfortable with K. If you like running things locally, then feel free to build the interpreter from source: https://codeberg.org/ngn/k/
+The easiest way to run ngn/k is to go to the online interpreter, available at https://ngn.bitbucket.io/k/.
+
+I recommend using the online interpreter's REPL available at https://ngn.bitbucket.io/k/#r until you get comfortable with K. If you like running things locally, then feel free to build the interpreter from source: https://codeberg.org/ngn/k/.
 
 Let's start with a Hello World:
 ```
@@ -175,3 +177,8 @@ K has 32 primitive symbols, including digraphs(2 symbol combinations). Each of t
 - Monad(ic): Single argument function.
 - Dyad(ic): Two argument function.
 - Conforming: an operation that works on the atoms of its arguments.
+
+## Exercises
+- Guess the result of `1 2 3 + 4`, Then try it in the REPL.
+- ngn/k has inbuilt documentation, available with `\` in the REPL. Try leafing through each help topic, and don't worry if you don't understand some things. The inbuilt documentation is the most complete and up-to-date cheatsheet on ngn/k, which will be very useful in the coming chapters.
+- Define an array with one integer, one character and one symbol.
