@@ -8,6 +8,21 @@ one: 1
 
 Assigns the number 1 to the variable `one`. You can then use `one` anywhere you like. Yay! 
 
+If you have already defined a variable, you can then modify its value in the same way with the help of reassignment:
+```
+ one: 2
+ one
+2
+```
+
+Or modified assignment:
+```
+ one +: 3
+ one
+5 
+```
+Modified assignment happens when a verb is given before the `:` symbol. The above statement is the same as `one: one + 3`.
+
 You can assign any noun to a variable. For example, a dictionary can be named with:
 
 ```
@@ -154,3 +169,8 @@ odds: 1+2*!:
 ## Vocabulary from this lesson
 
 - Variable: a name that is assigned a value.
+- Lambda: General curly brace syntax for defining a function.
+- progn: A block of statements which returns the value of its last statement, unless specified otherwise with `:`.
+- Global variable: A variable that is avaiable to the entire program, assigned with `::`.
+- Dictionary: A noun that maps keys to values.
+- Train: A sequence of composed verbs and their left arguments.
