@@ -179,6 +179,6 @@ K has 32 primitive symbols, including digraphs(2 symbol combinations). Each of t
 - Conforming: an operation that works on the atoms of its arguments.
 
 ## Exercises
-- Guess the result of `1 2 3 + 4`, Then try it in the REPL.
-- ngn/k has inbuilt documentation, available with `\` in the REPL. Try leafing through each help topic, and don't worry if you don't understand some things. The inbuilt documentation is the most complete and up-to-date cheatsheet on ngn/k, which will be very useful in the coming chapters.
-- Define an array with one integer, one character and one symbol.
+1. Guess the result of `1 2 3 + 4`, Then try it in the REPL.
+2. ngn/k has inbuilt documentation, available with `\` in the REPL. Try leafing through each help topic, and don't worry if you don't understand some things. The inbuilt documentation is the most complete and up-to-date cheatsheet on ngn/k, which will be very useful in the coming chapters.
+3. Define an array with one integer, one character and one symbol.
