@@ -8,6 +8,14 @@ one: 1
 
 Assigns the number 1 to the variable `one`. You can then use `one` anywhere you like. Yay! 
 
+To define multiple variables, you can put the variable names and their values in arrays:
+
+```
+ (one; two; three): 1 2 3
+1 2 3
+ one
+```
+
 If you have already defined a variable, you can then modify its value in the same way with the help of reassignment:
 ```
  one: 2
@@ -84,6 +92,8 @@ A function can reference itself with the special variable `o`. A recursive facto
 ```
 {$[x>1; x*o[x-1]; 1]}
 ```
+
+Here, `>` is greater than. `<` is lesser than, and `=` is equal to.
 
 So what does the `$` do? `$` is the K equivalent of an if statement. You *must* give `$` at least 3 arguments for a conditional.
 
@@ -167,10 +177,14 @@ odds: 1+2*!:
 ```
 
 ## Vocabulary from this lesson
-
 - Variable: a name that is assigned a value.
 - Lambda: General curly brace syntax for defining a function.
 - progn: A block of statements which returns the value of its last statement, unless specified otherwise with `:`.
 - Global variable: A variable that is avaiable to the entire program, assigned with `::`.
 - Dictionary: A noun that maps keys to values.
 - Train: A sequence of composed verbs and their left arguments.
+
+## Exercises
+1. Define a lambda function that takes two numbers and subtracts 1 from them.
+2. Define a train which has the same function as the one from Question 1.
+3. Create a dictionary with keys 1,2,3 and values 4,5,6.

@@ -1,4 +1,4 @@
-# Part 4: Adverbs and Looping
+# Part 4: Adverbs and Arrays
 
 Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions (`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they move through each element of the arrays given to them. 
 
@@ -118,3 +118,90 @@ Eachleft applies a dyadic function to each element in the left array and the ent
 ---
 
 The same applies for each right, which you can probably guess the symbol for (`/:`).
+
+## Folds and Scans
+
+Folds and scans are used to combine values from an array to produce one or many results.
+
+---
+
+### `x f/ y` Over (Fold from left)
+
+**Symbol:** `/`
+
+**Args:** `any dyad/ array`
+
+**Description:** Fold array `y` from left with a dyadic function. `x` is optional. 
+
+---
+
+There are many, many useful applications of folds, some of which are:
+
+Fold | Verb        | What it Does                       | Example
+---- | ----------- | ---------------------------------- | ----------------
+`+/` | Add         | Sum                                | `+/1 2 3` -> `6`
+`*/` | Subtract    | Product                            | `*/3 4 5` -> `60`
+`|/` | Maximum     | Maximum                            | `|/3 5 1` -> `5`, `|/1 0 0` -> `1`
+`&/` | Minimum     | Minimum                            | `&/3 5 1` -> `1`, `&/1 0 1 1` -> `1`
+`,/` | Concatenate | Join all elements together (Raze)  | `,/(1 2 3; 4 5 6)` -> `1 2 3 4 5 6`
+
+These folds can also be used with an initial element, providing a fallback value:
+
+```
+ 0+/1 2 3
+6
+ 0+/()
+0
+ 1*/7 8 9
+504
+ 1*/()
+1
+```
+
+With an initial element, these are fine. But what should happen *without* one?
+
+```
+ +/()
+0
+ */()
+1
+ |/()
+-9223372036854775807
+ &/()
+9223372036854775807
+ ,/()
+()
+```
+
+Sum and Product seem OK, but `|/` and `&/` have two meanings, since max and min mean different things for integers and booleans: the highest integer is what K returns by default, but the max and min booleans are 1 and 0. Hence, adding an initial element does the trick on booleans:
+
+```
+ 0|/()
+0
+ 1&/()
+1
+```
+
+Scan is the same as fold, *except* it will also give you the intermediate values of the fold:
+
+```
++\1 2 3 4 5       = 1 3 6 10 15
+1                 = 1 
+(1+2)             = 3
+((1+2)+3)         = 6
+(((1+2)+3)+4)     = 10
+((((1+2)+3)+4)+5) = 15
+```
+
+Scans are useful all by themselves, but they are also *very* useful for debugging fold functions and finding out what's going wrong midway.
+
+## Vocabulary from this lesson
+- Adverb: A syntactic form which acts like a higher order function on both nouns and verbs.
+- Each: Zap each element with function
+- EachBoth: Zip elements of two arrays with a function
+- Eachleft and Eachright: Zip each element in one argument with the whole other argument with a function.
+- Fold and scan: Condense an array into a single value using a function.
+
+## Exercises
+1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single scan.
+2. ngn/k's primitive symbols can be found in this page: https://k.miraheze.org/wiki/Primitives. Experiment with folds using any primitives you like. What unexpected things happen?

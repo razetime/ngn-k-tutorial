@@ -2,15 +2,16 @@
 An ngn/k tutorial. These are scripts for future videos, but can be used as learning material as is.
 
 ## TODOS
-- all parts need exercises
-- modified assignment in p2
+- P3 onward needs exercises
 
 Monadic verbs introduced: `+-*%,`
-Dyadic verbs introduced: `+-*%`
+Dyadic verbs introduced: `+-*%!>`
 
 ## How to use this tutorial
 
-This tutorial assumes you have some beginner programming knowledge, and a basic understanding of arrays.
+This tutorial assumes you have some beginner programming knowledge, and a basic understanding of what arrays are.
+
+The progression will start from explaining basic primitives, and move on to bigger concepts. The final few chapters will implement full programs in K, step by step.
 
 Primitive data will be given in this format:
 

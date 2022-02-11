@@ -114,3 +114,38 @@ To fix this, we should instead pass `a` via projection:
 ```
 
 as compared to assigning to `a` globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side effect free. This is not only useful in K, but helps for any programming task in general.
+
+
+Now, if you remember from the beginning of this chapter, functions, arrays and dictionaries are all treated the same way in K. So projections can *also* apply to arrays and dictionaries!
+
+For an array, a projection will take all elements from the nth dimension of an array:
+
+```
+ 3 3#!9
+(0 1 2
+ 3 4 5
+ 6 7 8)
+ a:3 3#!9
+ a[1;]
+3 4 5
+ a[;1]
+1 4 7
+```
+
+For dictonaries, it will index into each nested dictionary within, and pull out the respective values:
+```
+ (1 2 3!(3#,1 2 3!4 5 6))[;2]
+1 2 3!5 5 5
+```
+
+## Vocabulary from this lesson
+ - Array: A list of elements mapped by indices.
+ - Dictionary: A list of elements mapped by K values.
+ - Function: A range of elements mapped by a K expression.
+ - Application: Getting a corresponding value from a given noun. Can be indexing or calling a function.
+ - Projection: A partially applied value, obtained by incomplete indexing.
+
+## Exercises
+- Get the third column of the array `4 4#!16` using a projection. Then do it without a projection.
+- Create a function that returns another function which always returns 1.
+- Write a function that sums each row of a 2 dimensional array.
