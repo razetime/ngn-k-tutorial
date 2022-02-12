@@ -186,22 +186,38 @@ Scan is the same as fold, *except* it will also give you the intermediate values
 
 ```
 +\1 2 3 4 5       = 1 3 6 10 15
-1                 = 1 
-(1+2)             = 3
-((1+2)+3)         = 6
-(((1+2)+3)+4)     = 10
-((((1+2)+3)+4)+5) = 15
+  1               = 1 
+  1+2             = 3
+    3+3           = 6
+      6+4         = 10
+       10+5       = 15
 ```
 
+---
+
+### `x f\ y` Scan (Scan from left)
+
+**Symbol:** `\`
+
+**Args:** `any dyad\ array`
+
+**Description:** Fold array `y` from left with a dyadic function, producing intermediate results in an array. `x` is optional. 
+
+---
+
 Scans are useful all by themselves, but they are also *very* useful for debugging fold functions and finding out what's going wrong midway.
+
+Scans are also one of the main ways that K lets you access intermediate values from loops, making it widely useful. `\` and `/` are two of the most important, multipurpose symbols in K.
 
 ## Vocabulary from this lesson
 - Adverb: A syntactic form which acts like a higher order function on both nouns and verbs.
 - Each: Zap each element with function
 - EachBoth: Zip elements of two arrays with a function
 - Eachleft and Eachright: Zip each element in one argument with the whole other argument with a function.
-- Fold and scan: Condense an array into a single value using a function.
+- Fold: Condense an array into a single value using a function.
+- Scan: fold but with intermediate values.
 
 ## Exercises
 1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single scan.
 2. ngn/k's primitive symbols can be found in this page: https://k.miraheze.org/wiki/Primitives. Experiment with folds using any primitives you like. What unexpected things happen?
+3. Convert an array of base-2 digits to a base-10 integer using a fold. `f/1 0 1` -> `5`.

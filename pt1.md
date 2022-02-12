@@ -14,7 +14,7 @@ As said earlier, K is an APL-style array language which aims to eliminate many o
 
 Each one of K's *major* iterations is called a dialect. In this tutorial, we will be learning about ngn/k, an open source version of the K6 dialect. 
 
-K takes some time and effort to learn, just like any language. Some parts of K will be hard to digest coming from a different language background, but with a little focused practice and this beautiful tutorial, I can assure you that you will be able to do great things with K.
+K takes some time and effort to learn, just like any language. However, you may find learning K to be quite simple, due to the philosophy of the language and how constrained it is. Some parts of K will be hard to digest coming from a different language background, but with a little focused practice and this beautiful tutorial, I can assure you that you will be able to do great things with K.
 
 To start with K, you have to first understand right to left evaluation. Take this simple math expression:
 

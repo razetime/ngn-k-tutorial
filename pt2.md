@@ -121,6 +121,19 @@ function(int x) {
 
 ---
 
+So what is truth, and what is a falsehood?
+
+The following table lists *all* falsy values in K. The rest are truthy.
+
+| Type             |  Falsy
+| ---------------- |  -----
+| Number           |  `0`
+| Character        |  `"\0"`, `0x00`
+| Symbol           |  `` ` `` (Empty symbol)
+| Function         |  `(::)` 
+| Array            |  `()`
+| Dictionary       |  `()!()` (Empty dictionary)
+
 To group multiple statements in an if-else, you can use a progn (lisp term), which is a bunch of statements inside square brackets:
 
 ```
