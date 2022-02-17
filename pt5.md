@@ -88,6 +88,7 @@ The following are some of the more specialized looping adverbs in K which don't 
 **Args:** `monad/ any`
 
 **Description:** Apply function `g` to `z` until `g[z]` matches `z`.
+
 ---
 
 *Converge-scan* is the scan(`\`) version of the same, and returns the intermediate results:
@@ -132,10 +133,10 @@ Since the first element of an array doesn't have anything before it, eachprior a
 Stencil is a more general version of what eachprior does:
 
 ```
- 3{x,"."}':"abcde"
-("abc."
- "bcd."
- "cde.")
+  3_:':"ABcdE"
+("abc"
+ "bcd"
+ "cde")
 ```
 
 The main difference between stencil and eachprior is that stencil applies a function to each n-length chunk, instead of passing in elements as arguments.

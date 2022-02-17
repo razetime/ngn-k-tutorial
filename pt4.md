@@ -35,6 +35,7 @@ For example, to reverse an array, we can use the `|` verb:
 **Args:** `| array`
 
 **Description:** reverse the elements of an array.
+
 ---
 
 and to reverse each row of a 2D array, we can do `|'`:
