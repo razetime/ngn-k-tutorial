@@ -134,6 +134,8 @@ The following table lists *all* falsy values in K. The rest are truthy.
 | Array            |  `()` (Any empty array)
 | Dictionary       |  `()!()` (Any empty dictionary)
 
+Although these may seem convenient, I highly recommend that your condition always returns 0 or 1.
+
 To group multiple statements in an if-else, you can use a progn (lisp term), which is a bunch of statements inside square brackets:
 
 ```

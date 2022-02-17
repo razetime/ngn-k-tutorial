@@ -1,4 +1,4 @@
-# Part 4: Adverbs and Arrays
+# Part 4: Adverbs with Arrays
 
 Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions (`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they move through each element of the arrays given to them. 
 
@@ -208,6 +208,8 @@ Scan is the same as fold, *except* it will also give you the intermediate values
 Scans are useful all by themselves, but they are also *very* useful for debugging fold functions and finding out what's going wrong midway.
 
 Scans are also one of the main ways that K lets you access intermediate values from loops, making it widely useful. `\` and `/` are two of the most important, multipurpose symbols in K.
+
+As a rule of thumb, all the overloads of `function/ value` will provide a *single* final value, and  in the same way, overloads of `function\value` will provide the intermediate results of that same operation.
 
 ## Vocabulary from this lesson
 - Adverb: A syntactic form which acts like a higher order function on both nouns and verbs.
