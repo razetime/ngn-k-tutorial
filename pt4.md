@@ -210,7 +210,29 @@ Scans are useful all by themselves, but they are also *very* useful for debuggin
 
 Scans are also one of the main ways that K lets you access intermediate values from loops, making it widely useful. `\` and `/` are two of the most important, multipurpose symbols in K.
 
-As a rule of thumb, all the overloads of `function/ value` will provide a *single* final value, and  in the same way, overloads of `function\value` will provide the intermediate results of that same operation.
+29 42 57
+ {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
+(1 2 3
+ 4 5 6
+ 7 8 9
+ 29 42 57)
+``````
+
+ {x+y*z}'[1 2 3; 4 5 6; 7 8 9]
+29 42 57
+```
+
+*Fold* and *scan* both use the first argument as initial value, and the rest of the arguments as input arrays.
+
+```
+ {x+y*z}/[1; 1 2 3; 4 5 6; 7 8 9]
+29 42 57
+ {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
+(1 2 3
+ 4 5 6
+ 7 8 9
+ 29 42 57)
+```
 
 ## Vocabulary from this lesson
 - Adverb: A syntactic form which acts like a higher order function on both nouns and verbs.
@@ -218,7 +240,7 @@ As a rule of thumb, all the overloads of `function/ value` will provide a *singl
 - EachBoth: Zip elements of two arrays with a function
 - Eachleft and Eachright: Zip each element in one argument with the whole other argument with a function.
 - Fold: Condense an array into a single value using a function.
-- Scan: fold but with intermediate values.
+- Scan: fold but outputs intermediate values as an array.
 
 ## Exercises
 1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single scan.

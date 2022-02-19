@@ -1,4 +1,4 @@
-# Part 5: Explicit Loops and Other Neat Adverbs
+# Part 5: More Looping adverbs
 
 Most of the time, you can manage to write good K programs with neat little eaches and folds and scans. But *some* algorithms choose not to use arrays. Some algorithms insist on themselves, and that's why K has its own version of explicit loops from other languages:
 
@@ -70,14 +70,20 @@ While-scan is quite self-explanatory (It provides the intermediate results of a 
 0 1 2 3 4 5
 ```
 
+
+
 ## Other looping adverbs
 
 The following are some of the more specialized looping adverbs in K which don't exactly fit in the previous two categories.
+
+Let's start with *converge*:
 
 ```
  {1_x}/1 2 3 4 / Drop the first element till the array no longer changes.
 !0
 ```
+
+Converge applies a verb to a value till the value no longer changes, and it's also called *fixpoint* due to that reason.
 
 ---
 
@@ -154,19 +160,41 @@ The main difference between stencil and eachprior is that stencil applies a func
 
 ---
 
-## The "other neat adverbs"
-It would be quite blasphemous if I did not keep up on my promise from the chapter's title. The following adverbs don't take in functions, but they instead provide a very useful operation:
-
-### Encode and Decode
-Similar to their APL equivalents, encode and decode take a list of bases (or a single base) and peform base conversion on their argument.
+To simply get the chunks of the array, we can use the identity function `::`: `num ::': array`, but there is a more convenient adverb for it: `x ': array`, which is called *window*.
 
 
+---
 
+### `x ': y` Window
 
-## Multiple arguments
+**Symbol:** `':`
+
+**Args:** `int ': array`
+
+**Description:** get each overlapping `x`-length chunk in array `y`.
+
+---
+
+It may be quite surprising at first that window does not take a function, but be not afraid. Window behaves like any other function, and can be stored as well.
+
+Why isn't *window* a verb, if it doesn't take a function, then? A K interpreter has to make the distinction because it's an overload of an adverb symbol.
+
+## More adverb overloads
+Now that you have seen window, we can look at some more neat adverbs:
+
+- *base encode* (`int(x) / int(y)`) converts a base-10 integer to an array of digits specified by the bases on the left. If `y` is an array, every number in `y` is encoded into a column.
+- *base decode* (`int(x) \ int(y)`) is the inverse of base encode.
+- *split* (`string(x) \ string(y)`) splits `y` on string `x`.
+- *join* (`string(x) / array(y)`) joins array `y` on string `x`.
+- *binary search* (`any(x) ' array(y)`) does a binary search for each element of `x` in `y`. If you do not know what a binary search is, I recommend reading [this article](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
+
+These *can* be implemented using the help of K's verbs (and K's philosophy does support that), but having them as symbols is quite convenient, since they are very commonly used.
 
 ## Vocabulary from this chapter
+- Window: a continuous run of elements in an array.
+- Binary Search: A search that can find the position an element should be inserted after in a sorted array.
 
 ## Exercises
 1. *Converge* is a special case of while. Given a monadic function `g` and argument `z`, write `g/z` using a while.
+2. Implement a function that converts a number to a list of digits in a given base (use while/fixpoint).
 
