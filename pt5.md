@@ -97,6 +97,20 @@ Converge applies a verb to a value till the value no longer changes, and it's al
 
 ---
 
+
+---
+
+### `x _ y` Drop
+
+**Symbol:** `_`
+
+**Args:** `integer _ array`
+
+**Description:** Drop the first `x` elements of `y`. If `x` is negative, drop the last `x` elements.
+
+---
+
+
 *Converge-scan* is the scan(`\`) version of the same, and returns the intermediate results:
 
 ```
@@ -188,7 +202,61 @@ Now that you have seen window, we can look at some more neat adverbs:
 - *join* (`string(x) / array(y)`) joins array `y` on string `x`.
 - *binary search* (`any(x) ' array(y)`) does a binary search for each element of `x` in `y`. If you do not know what a binary search is, I recommend reading [this article](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
 
-These *can* be implemented using the help of K's verbs (and K's philosophy does support that), but having them as symbols is quite convenient, since they are very commonly used.
+
+These *can* be implemented using the help of K's primitives (and K's philosophy does support that), but having them as symbols is quite convenient, since they are very commonly used.
+
+## Not Really Adverbs
+
+Two important functional programming primitives: `#`(filter) and `_`(filter-out) are not adverbs, since they don't quite fit in the overloads, but they are still quite important in general code.
+
+Generally, filtering in K is done with the help of `&`(find), which repeats the index of each element by the value of each element:
+
+```
+ &1 0 1 0 1
+0 2 4
+```
+
+---
+
+### `& x` Find
+
+**Symbol:** `&`
+
+**Args:** `& int_array`
+
+**Description:** Repeat the index of each element in `x` by the value of each element in `x`.
+
+---
+
+this can be used in tandem with `@` to select values from an array:
+```
+ ("Raze"; "blah"; "ti"; "blah"; "me")@&1 0 1 0 1
+("Raze"
+ "ti"
+ "me")
+```
+
+This can then be extended to use a condition on the array, keeping elements with length lesser than 5:
+
+```
+ {x@&(5>#:)'x}@("K"; "looong"; "is"; "blaah"; "cool")
+("K"
+ "is"
+ "cool")
+```
+
+*Filter* and *filter-out* are shorthands for this type of filtering. They expect a monadic function (given as a noun), and apply it to the whole array.
+
+Then, the rest is done the same way as it is with `&` and `@`. The previous example can be written as:
+
+```
+ ((5>#:)')#("K"; "looong"; "is"; "blaah"; "cool")
+("K"
+ "is"
+ "cool")
+```
+
+Remember that filter and filter-out are verbs, and hence expect function values and not verbs. this means `~#x` will not work, but `(~:)#x` will.
 
 ## Vocabulary from this chapter
 - Window: a continuous run of elements in an array.

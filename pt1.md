@@ -44,6 +44,14 @@ Let's start with a Hello World:
                                                                                                                                                                                                                                                                                                                                                                                                                                  
 K will automatically display the result of every line in your program as K data. This means that you can safely paste the result of a K expression into your program, and use it later.
 
+To prevent K from repeating everything you say to it, you can add a semicolon to the end of your line.
+
+```
+"Hello, World!";
+```
+
+will do absolutely nothing!
+
 To actually display a string without K's formatting, you can do this:
 ```
 ` 0:"Hello, World!"

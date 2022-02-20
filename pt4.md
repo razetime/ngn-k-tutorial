@@ -2,7 +2,9 @@
 
 Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions (`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they move through each element of the arrays given to them. 
 
-Even with the power of recursion and conforming operations, you will often find yourself in predicaments where these just do not fit the task. This is where we go into K's looping Adverbs.
+Even with the power of recursion and branching, you will often find yourself in predicaments where these just do not fit the task.
+K's general design lends itself strongly towards functional programming, and many of its adverbs help omit loops and branching to solve tasks concisely and quickly.
+Hence, you will most likely never need recursion and branching in most situations.
 
 Each (`'`) is an adverb which takes a function or verb and applies the function on each element of an array. Yes, the symbol for each is a single quote.
 
