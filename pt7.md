@@ -64,11 +64,9 @@ but the values of the arguments are not supported (they are not in the right dom
 
 **Example:**```
 ```
-a:1 2 3;a[-7]:0;
-
 
 ### `'index`
-An index error triggers when you assign outside the**Eds of a**n array.
+An index error triggers when you assign outside the bound of an array.
 This can be done by normal assignment, or with the help of *amend*.
 
 **Example:**
