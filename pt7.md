@@ -145,7 +145,7 @@ This often happens in conditional iteration where values tend to get really big.
 
 
 ## Finding and throwing errors
-Print debugging is the main method of debugging in K. The general method of printing (`` `0:``) is quite clunky in this regard, so instead you should use ` \` (trace, note the leading space),
+Print debugging is the main method of debugging in K. The general method of printing (`` `0:``) is quite clunky in this regard, so instead you should use <code>&nbsp;\\</code> (trace, note the leading space),
 which autoformats and prints the K value given to it, and then returns it. Trace is also treated as a verb, and hence will be executed like any other verb, right to left.
 
 You can also throw custom errors using `` `err``, which will throw an error with the name of the string given, along with the line the error was thrown on.
