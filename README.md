@@ -1,11 +1,7 @@
 # ngn-k-tutorial
 An ngn/k tutorial. These are scripts for future videos, but can be used as learning material as is.
 
-## TODOS
-- P3 onward needs exercises
-
-Monadic verbs introduced: `+-*%,`
-Dyadic verbs introduced: `+-*%!>`
+**Currently in progress:** Chapter 8 sudoku
 
 ## How to use this tutorial
 
