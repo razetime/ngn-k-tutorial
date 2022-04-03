@@ -144,8 +144,8 @@ Fold | Verb        | What it Does                       | Example
 ---- | ----------- | ---------------------------------- | ----------------
 `+/` | Add         | Sum                                | `+/1 2 3` -> `6`
 `*/` | Subtract    | Product                            | `*/3 4 5` -> `60`
-`|/` | Maximum     | Maximum                            | `|/3 5 1` -> `5`, `|/1 0 0` -> `1`
-`&/` | Minimum     | Minimum                            | `&/3 5 1` -> `1`, `&/1 0 1 1` -> `1`
+`\|/`| Maximum     | Maximum                            | `\|/3 5 1` -> `5`, `\|/1 0 0` -> `1`
+`&/` | Minimum     | Minimum                            | `&/3 5 1` -> `1`, `&/1 0 1 1` -> `0`
 `,/` | Concatenate | Join all elements together (Raze)  | `,/(1 2 3; 4 5 6)` -> `1 2 3 4 5 6`
 
 These folds can also be used with an initial element, providing a fallback value:
@@ -212,14 +212,14 @@ Scans are useful all by themselves, but they are also *very* useful for debuggin
 
 Scans are also one of the main ways that K lets you access intermediate values from loops, making it widely useful. `\` and `/` are two of the most important, multipurpose symbols in K.
 
-29 42 57
+```
  {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
 (1 2 3
  4 5 6
  7 8 9
  29 42 57)
-``````
-
+```
+```
  {x+y*z}'[1 2 3; 4 5 6; 7 8 9]
 29 42 57
 ```
