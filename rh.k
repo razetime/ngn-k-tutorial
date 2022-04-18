@@ -1,11 +1,35 @@
 // roger hui
 
-j:       (,/0 27 54+\:0 3 6)+\:,/0 9 18+\:0 1 2
-r:       9#',:'(9*!9)+\:!9
-c:       ((!9)+\:9*!9)@9#,!9
-b:       j@(,/9#'!9)@j
-I:       r,''c,''b
-R:       j,((9*!9)+\:!9),(!9)+\:9*!9
+/ free x applies to grid x and returns a 9 9 9 boolean array y 
+/ such that  y . i,j,k  is 1 iff 1+k can be assigned to cell i,j 
+/ of x.
+
+/ rcs x computes a 27 9 matrix of the 27 regions of grid x.  
+/ eu applies to a matrix of regions and returns a 1 for each 
+/ valid element.  ok x is 1 iff x is a valid grid.
+
+/ s1x and s1u apply to the free list for a grid.  s1x 
+/ assigns numbers to cells that have only one candidate.  
+/ s1u looks for a number which occurs exactly once in 
+/ the candidates for a row or a column, and assigns that
+/ to the cell for which it is a candidate.  s1 repeatedly 
+/ applies s1x and s1u to one or more grids until there are 
+/ no more changes.
+
+/ s2a x applies to to grid x and returns one or more grids 
+/ with cell i,j filled in with all possible candidates, 
+/ for cell i,j that has the smallest set of candidates.  
+/ s2 applies s2a to one or more grids and returns all the 
+/ grids generated thereby.
+
+/ sudoku x finds all solutions for grid x.
+
+j:       (,/0 27 54+\:0 3 6)+\:,/0 9 18+\:0 1 2 / helper for c and r
+r:       9#',:'(9*!9)+\:!9                      / row for each cell.
+c:       ((!9)+\:9*!9)@9#,!9                    / col for each cell.
+b:       j@(,/9#'!9)@j                          / block for each cell.
+I:       r,''c,''b                              / all cells to check for each cell.
+R:       j,((9*!9)+\:!9),(!9)+\:9*!9            / row, col, block indices.
 
 free:    {(0=x)>(1+!9)in/:/:(,/x)@I}
 regions: {(,/x)@R}
@@ -20,6 +44,28 @@ s2a:     {if[~0 in,/x; :,x]; b:free x; i:t?&/t:,/(10,1_!9)@+/''b
 s2:      {,/s2a'x}
 sudoku:  {{s2 t@&ok' t:s1 x}/,x}
 
+/ grid examples
+
+x0: (0 6 0  1 0 4  0 5 0
+     0 0 8  3 0 5  6 0 0
+     2 0 0  0 0 0  0 0 1
+     8 0 0  4 0 7  0 0 6
+     0 0 6  0 0 0  3 0 0
+     7 0 0  9 0 1  0 0 4
+     5 0 0  0 0 0  0 0 2
+     0 0 7  2 0 6  9 0 0
+     0 4 0  5 0 8  0 7 0)
+
+x9: (8 0 0  0 0 0  7 0 9
+     2 0 0  7 0 4  0 0 0 
+     0 0 7  0 0 1  0 5 0 
+     3 0 0  0 0 0  0 0 0
+     7 0 0  2 1 6  0 0 4 
+     0 0 0  0 0 0  0 0 6
+     0 8 0  4 0 0  3 0 0 
+     0 0 0  9 0 8  0 0 2
+     4 0 5  0 0 0  0 0 7)
+sudoku x9
 \
 
 Function sudoku in the appended script finds all solutions to a grid.

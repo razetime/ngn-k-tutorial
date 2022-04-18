@@ -27,26 +27,49 @@ disp: { / display a given 9x9 matrix as a sudoku board.
  s[;5 11]: "|"
  s .[;;:;"+"]/(3 5;7 5;3 11;7 11)}
 
-/ Roger Hui's sudoku solver.
-j:       (,/0 27 54+\:0 3 6)+\:,/0 9 18+\:0 1 2 / 
-r:       9#',:'(9*!9)+\:!9
-c:       ((!9)+\:9*!9)@9#,!9
-b:       j@(,/9#'!9)@j
-I:       r,''c,''b
-R:       j,((9*!9)+\:!9),(!9)+\:9*!9
+/ Roger Hui sudoku
+j:       (,/0 27 54+\:0 3 6)+\:,/0 9 18+\:0 1 2 / helper for c and r
+r:       9#',:'(9*!9)+\:!9                      / row for each cell.
+c:       ((!9)+\:9*!9)@9#,!9                    / col for each cell.
+b:       j@(,/9#'!9)@j                          / block for each cell.
+I:       r,''c,''b                              / all cells to check for each cell.
+R:       j,((9*!9)+\:!9),(!9)+\:9*!9            / row, col, block indices.
+in:      {~^y?x}
 
 free:    {(0=x)>(1+!9)in/:/:(,/x)@I}
 regions: {(,/x)@R}
-eu:      {(x in !10)&(0=x)|{(!9)=x?x}'x}
+eu:      {(in[x;!10])&(0=x)|{(!9)=x?x}'x}
 ok:      {&/,/eu regions x}
 s1u:     {m:1=+/'(,/x)@R; j:&|/'m; k:m[j]?\:1b; i:,/(R@j)@'&:'(+:'(,/x)@R@j)@'k
            (9*!9)_@[81#0;i;:;1+k]}
 s1x:     {(+/''x*\:\:1+!9)*1=+/''x}
 s1:      {x+(s1x b)|s1u b:free x}/'
-s2a:     {if[~0 in,/x; :,x]; b:free x; i:t?&/t:,/(10,1_!9)@+/''b
+s2a:     {$[~in[0;,/x]; :,x; ::]; b:free x; i:t?&/t:,/(10,1_!9)@+/''b
            d:1+&(,/b)@i; x+/:d*\:i=(9*!9)_!81}
 s2:      {,/s2a'x}
 sudoku:  {{s2 t@&ok' t:s1 x}/,x}
+
+x0: (0 6 0  1 0 4  0 5 0
+     0 0 8  3 0 5  6 0 0
+     2 0 0  0 0 0  0 0 1
+     8 0 0  4 0 7  0 0 6
+     0 0 6  0 0 0  3 0 0
+     7 0 0  9 0 1  0 0 4
+     5 0 0  0 0 0  0 0 2
+     0 0 7  2 0 6  9 0 0
+     0 4 0  5 0 8  0 7 0)
+x9: (8 0 0  0 0 0  7 0 9
+     2 0 0  7 0 4  0 0 0 
+     0 0 7  0 0 1  0 5 0 
+     3 0 0  0 0 0  0 0 0
+     7 0 0  2 1 6  0 0 4 
+     0 0 0  0 0 0  0 0 6
+     0 8 0  4 0 0  3 0 0 
+     0 0 0  9 0 8  0 0 2
+     4 0 5  0 0 0  0 0 7)
+
+sudoku x9
+
 
 diff: { / sudoku board of given difficulty, given output of gen[]
  
