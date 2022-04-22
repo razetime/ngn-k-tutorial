@@ -16,7 +16,7 @@ The number of an input verb denotes is data format:
 - `1:` takes in arrays of bytes.
 
 <!-- The most commonly used I/O verbs are `0:` and `1:`. -->
-You have already seen `0:` used for output in the first chapter.
+You have already seen `0:` used for output in the [first chapter](pt1.md).
 
 Every I/O verb reads input when used monadically, and writes output when used dyadically. The general form is as follows:
 

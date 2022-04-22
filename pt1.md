@@ -4,7 +4,7 @@ Welcome to K. K is an array-based programming language. Although this term may s
 
 K is inspired from APL, which has its roots in math notation. K is hence in turn, an APL-style programming language which gears math notation more strongly toward practical programming than APL does.
 
-Array languages to this day are still relatively underused, since they are very unlike what people are taught as beginner programmers. There are a few languages which support array programming constructs, like Julia and Python using numpy, but there are few things which compare to the joy of thinking and using K fluently. K and the APL family of languages push the horizons of what a programming language should look like, and how it should be used. Using a tool that is designed for its job has its own profound benefits, and K proves that rule very well. If you are looking for a new way to look at programming and you want to have fun, look no further.
+Array languages to this day are still relatively underused, since they are very unlike what people are taught as beginner programmers. There are a few languages which support array programming constructs, like Julia, and Python + numpy, but there are few things which compare to the joy of thinking and using K fluently. K and the APL family of languages push the horizons of what a programming language should look like, and how it should be used. Using a tool that is designed for its job has its own profound benefits, and K proves that rule very well. If you are looking for a new way to look at programming and you want to have fun, look no further.
 
 As said earlier, K is an APL-style array language which aims to eliminate many of APL's problems in programming. At a glance, the most noticeable improvements are:
 
@@ -14,7 +14,7 @@ As said earlier, K is an APL-style array language which aims to eliminate many o
 
 Each one of K's *major* iterations is called a dialect. In this tutorial, we will be learning about ngn/k, an open source version of the K6 dialect. 
 
-K takes some time and effort to learn, just like any language. However, you may find learning K to be quite simple, due to the philosophy of the language and how constrained it is. Some parts of K will be hard to digest coming from a different language background, but with a little focused practice and this beautiful tutorial, I can assure you that you will be able to do great things with K.
+K takes some time and effort to learn, just like any language. However, K is designed to be simple. Most of K's basic concepts can be finished in an afternoon. Some parts of K will be hard to digest coming from a different language background, but with a little focused practice and this beautiful tutorial, I can assure you that you will be able to do great things with K.
 
 To start with K, you have to first understand right to left evaluation. Take this simple math expression:
 
