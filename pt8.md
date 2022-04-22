@@ -49,10 +49,11 @@ matmul: {
   }'!n
   C}
 ```
-This is the worst K code I've ever written, because we are trying to write K like C, and K doesn't work well with that design. The main problems are:
+This is the worst K code I've ever written, because we are trying to write K like an imperative language, and K doesn't work well with that design. The main problems are:
 - Many, many globals are assigned
 - multiple nested loops
 - lots of modification
+
 Luckily, there are a lot of things we can simplify here, and we can address these problems one by one.
 
 Let us begin at the innermost loop:
@@ -140,6 +141,6 @@ Now, we have a function which can be easily made tacit. With the rules from [Cha
 ```
 matmul: (+/*)\:
 ```
-A matrix multiplication function you can be proud of.
+A matrix multiplication function you can be proud of. This process may seem like it has a lot of steps, but condensing code will become much easier and intuitive as you practice your skill in K.
 
 Matrix multiplication is a simple procedure which works well with K's array support. We will be seeing more algorithms that don't play well with K, and how to handle them in future chapters.
