@@ -2,9 +2,9 @@
 
 Welcome to K!
 
-K is an array-oriented programming language. Although this term may sound new, K comes from a family of programming languages which date back to APL in the 1960s. You may already know a popular object-oriented languages such as Python or Java, so why should you learn K? Perhaps the most noble reason is that array-oriented languages like K are powerful tools of thought, which amplify your intelligence and let you think in better ways. If you care about efficiency, programs written in K can run faster (and take less time to write) than other languages. But equally important - programming in K is really *fun*.
+K is an array-oriented programming language. Although this term may sound new, K comes from a family of programming languages which date back to APL in the 1960s. You may already know a popular object-oriented languages such as Python or Java, so why should you learn K?
 
-Other languages may add array programming capabilities, such as Julia or Python+NumPy, but there are few things which compare to the joy of thinking and using K fluently. K and the APL family of languages push the horizons of what a programming language should look like, and how it should be used. Using a tool that is designed for its job has its own profound benefits, and K proves that rule very well. If you are looking for a new way to look at programming and you want to have fun, you are in the right place.
+Other languages may have array programming capabilities, such as Julia or Python+NumPy, but there are few things which compare to the joy of thinking and using K fluently. K and the APL family of languages push the horizons of what a programming language should look like, and how it should be used. Using a tool that is designed for its job has its own profound benefits, and K proves that rule very well. If you are looking for a new way to look at programming and you want to have fun, you are in the right place.
 
 Part of K's design was to improve upon some of APL's issues. At a glance, the most noticeable improvements are:
 
@@ -62,7 +62,7 @@ To actually display a string without K's formatting, you can do this:
 
 In this program, <code>\` 0:</code> is the equivalent of a print statement in any other language. It will print a simple character array given to it with a newline at the end. You can change it to <code>\` 1:</code> if you want to display without a newline.
 
-Reminder: K code has no precendence rules, other than executing everything from right to left. So the interpreter reads <code>"Hello World"</code> first, then <code>0:</code>, then the backtick.
+Reminder: K's "operators" have no precedence. So the interpreter reads <code>"Hello World"</code> first, then <code>0:</code>, then the backtick.
 
 The other major part of our Hello World program is the character array, which brings us to the lego bricks of the array-based language: the arrays.
 
@@ -73,9 +73,9 @@ The things that you can put in an array are called **Nouns**. These can be:
 - Other Arrays
 - Functions and dictionaries, which we will discuss later. 
 
-**Verbs** are primitive functions, written with a single character. When you put a verb inside an array, K converts it to a noun. A verb can take one or two arguments, and can have multiple meanings based on what data the verb is given.
+**Verbs** are primitive functions, written with a single character. When you put a verb inside an array, K converts it to a noun. A verb can take one or two arguments, and can have multiple meanings based on what data the verb is given. Verbs are equivalent to operators in other languages.
 
-**Adverbs** are primitive higher-order functions, written with one or two characters. An adverb takes a verb on the left and produces a new verb with modified functionality. Some adverbs also behave like verbs if they are not given a verb argument.
+**Adverbs** are primitive higher-order functions, written with one or two characters. An adverb takes one or two verbs on the left and produces a new verb with modified functionality. Some adverbs also behave like verbs if they are not given a verb argument. Adverbs bind first, and they are always evaluated first. Before verbs are executed from right to left, adverbs must be paired with their respective arguments.
 
 The default way of defining multi-element arrays is as follows:
 ```
