@@ -31,11 +31,15 @@ For a function, `@` treats `x` like it is a single value, and provides it to `f`
 For a dictionary or an array, `@` can take a single index:
 
 ``(`a`b`c!1 2 3) @ `a`` -> `1`
+
 `67 78 89 @ 1` -> `78`
 
 or an array of indices:
+
 ``(`a`b`c!1 2 3) @ `a`c`b`` -> `1 3 2`
+
 `67 78 89 @ 0 2` -> `67 89`
+
 
 all forms of application behave in this manner i.e. they will always index into atomic values and preserve the shape of the indices.
 
@@ -49,14 +53,14 @@ for a function call, you can do `f[a;b;c]`. Remember that function calls include
 
 this means that `+[1;2]` is the same as `1+2`, and you can effectively translate most K programs to use M-expressions only.
 
-For an array, each argument indexes into a different dimension;
+For an array, each argument indexes into a different dimension:
 ```
  :a:3 3#1 2 3 4 5 6 7 8 9
 (1 2 3
  4 5 6
  7 8 9)
 ```
-The `:` at the beginning of the line is used to force a return value, so `a` gets printed. Now, with the help of M-expressions, you can do `a[1;2]` to get 5, and `a[0;0]` to get 1.
+The `:` at the beginning of the line is used to force a return value, so `a` gets printed. Now, with the help of M-expressions, you can do `a[1;2]` to get 6, and `a[0;0]` to get 1.
 
 You can also omit a dimension in reshape using `0N` (a null value), like so:
 ```
@@ -67,7 +71,7 @@ You can also omit a dimension in reshape using `0N` (a null value), like so:
 ```
 This will automatically split the array to fit in the given dimension constraint.
 
-Like with @, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `2 5`. Indexing always covers a rectangular area regardless of number of dimensions.
+Like with `@`, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `2 5`. Indexing always covers a rectangular area regardless of number of dimensions.
 
 The final form of application is dot (`.`).
 
@@ -101,7 +105,7 @@ For functions, omitting arguments implies *partial application*:
 
 `-[;1]` is a function that does `x-1` given an x. Basically, Projections will fill in values that you have left empty. 
 
-Projections are often used to pass in outside data to a functions. This is a common method of omitting global variables, and passing data to inner blocks in K.
+Projections are often used to pass in outside data to a function. This is a common method of omitting global variables, and passing data to inner blocks in K.
 
 For example, this snippet should return a function that adds `a` to its argument.
 
@@ -122,7 +126,7 @@ To fix this, we should instead pass `a` via projection:
 4
 ```
 
-as compared to assigning to `a` globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side effect free. This is not only useful in K, but helps for any programming task in general.
+as compared to assigning to `a` globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side-effect free. This is not only useful in K, but helps for any programming task in general.
 
 
 Now, if you remember from the beginning of this chapter, functions, arrays and dictionaries are all treated the same way in K. So projections can *also* apply to arrays and dictionaries!
