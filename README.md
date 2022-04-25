@@ -61,7 +61,7 @@ Verb coverage:
  - [ ] null?
  - [ ] except
  - [ ] fill
- - [ ] length
+ - [x] length
  - [ ] reshape
  - [ ] floor
  - [ ] lowercase
