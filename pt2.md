@@ -180,6 +180,17 @@ a) Generating a range 0..x-1 - `!x`
 b) multiplying it by 2 (conforming) - `2*`
 c) adding 1 to it (conforming) - `1+`
 
+---
+### `! x` Range / Odometer
+
+**Symbol:** `!`
+
+**Arguments:** `! number / numeric array` 
+
+**Description:** range from 0 to `x-1`. Odometer is generalized range: generate indices for indexing into an array of shape `x`.
+
+---
+
 to convert this to a train, we have to specify arities:
 - `!` is called monadically: `!:`
 - `*` is called dyadically: `2*`

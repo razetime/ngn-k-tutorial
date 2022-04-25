@@ -24,7 +24,7 @@ Each (`'`) is an adverb which takes a function or verb and applies the function 
 For example, to reverse an array, we can use the `|` verb:
 
 ```
-|1 2 3
+ |1 2 3
 3 2 1
 ```
 

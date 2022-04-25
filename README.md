@@ -23,4 +23,61 @@ Primitive data will be given in this format:
 
 ---
 
-Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary and doing the exercises in each part before moving on the next lesson. 
+Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary and doing the exercises in each part before moving on the next lesson.
+
+# Progress:
+Verb coverage:
+ - [ ] identity
+ - [ ] right
+ - [x] plus
+ - [ ] flip
+ - [x] product
+ - [x] first
+ - [x] minus
+ - [x] subtract
+ - [x] divide
+ - [x] square root
+ - [x] first
+ - [x] multiply
+ - [x] range, odometer
+ - [ ] keys
+ - [x] create dict
+ - [ ] mod
+ - [ ] where
+ - [ ] min
+ - [x] reverse
+ - [ ] max
+ - [ ] grade up
+ - [ ] lesser
+ - [ ] grade down
+ - [ ] greater
+ - [ ] group
+ - [ ] identity matrix
+ - [ ] equal
+ - [ ] not
+ - [ ] match
+ - [x] enlist
+ - [ ] concat
+ - [ ] null?
+ - [ ] except
+ - [ ] fill
+ - [ ] length
+ - [ ] reshape
+ - [ ] floor
+ - [ ] lowercase
+ - [ ] drop
+ - [ ] delete
+ - [ ] cut
+ - [ ] string
+ - [ ] pad
+ - [ ] cast
+ - [ ] distinct
+ - [ ] random float
+ - [ ] find
+ - [ ] random
+ - [x] at
+ - [ ] type
+ - [x] dot
+ - [ ] eval
+ - [ ] values
+ - [x] if

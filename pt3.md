@@ -49,18 +49,41 @@ for a function call, you can do `f[a;b;c]`. Remember that function calls include
 
 this means that `+[1;2]` is the same as `1+2`, and you can effectively translate most K programs to use M-expressions only.
 
-For an array, each argument indexes into a different dimension:
+For an array, each argument indexes into a different dimension.
+Before we get to multidimensional indexing, let us get to know reshape:
 
-taking an array  like the following:
+---
+
+### `x#y` Reshape
+
+**Symbol:** `#`
+
+**Args:** `numeric array # (array/atom)`
+
+**Description:** Reshapes elements of argument `y` as per the dimensions given in `x`, repeating elements as necessary.
+
+---
+
+Reshape is a powerful tool for generating arrays of any kind. Here, for our example:
+
 ```
- :a:3 3#!9
-(0 1 2
- 3 4 5
- 6 7 8)
- ```
-you can do `a[1;2]` to get 5, and `a[0;0]` to get 1.
+ :a:3 3#1 2 3 4 5 6 7 8 9
+(1 2 3
+ 4 5 6
+ 7 8 9)
+```
+The `:` at the beginning of the line is used to force a return value, so `a` gets printed. Now, with the help of M-expressions, you can do `a[1;2]` to get 5, and `a[0;0]` to get 1.
 
-Like with @, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `2 5`.
+You can also omit a dimension in reshape using `0N` (a null value), like so:
+```
+ 3 0N#1 2 3 4 5 6 7 8 9
+(1 2 3
+ 4 5 6
+ 7 8 9)
+```
+This will automatically split the array to fit in the given dimension constraint.
+
+Like with @, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `2 5`. Indexing always covers a rectangular area regardless of number of dimensions.
 
 The final form of application is dot (`.`).
 
@@ -72,13 +95,15 @@ The final form of application is dot (`.`).
 
 **Args:** `noun . array`
 
-**Description:** Applies a noun `f` given on the arguments given in array `x`.
+**Description:** Applies a noun `f` to the arguments given in array `x`.
 
 ---
 
 Dot application takes a noun on the left, and an array on the right. Each array element is taken as an argument.
 
 `(+) . 1 2` is the same as `1 + 2`. Since `+` is a primitive, you must put it in parentheses to make it a noun before giving it to `.`.
+
+**Note**: This behaviour where parenthesizing a verb creates a noun is called *nominalization*. It is mainly useful when a verb takes a function as an argument.
 
 from the previous example, `a[1;2]` can be rewritten as `a . 1 2`, and `a[0;0]` is `a . 0 0`.
 
