@@ -1,14 +1,17 @@
-# Part 4: Adverbs with Arrays
+# Part 4: Adverbs
 
 Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions (`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they move through each element of the arrays given to them. 
 
-Even with the power of recursion and branching, you will often find yourself in predicaments where these just do not fit the task.
-K's general design lends itself strongly towards functional programming, and many of its adverbs help omit loops and branching to solve tasks concisely and quickly.
+Even with the power of recursion and branching, you will often find yourself in predicaments where these just 
+do not fit the task.
+K's general design lends itself strongly towards functional programming, and many of its adverbs help omit 
+loops and branching to solve tasks concisely and quickly.
+
+If you are acquainted with functional programming already, `'` is map, `'` (dyadic) is zip, `/` is foldl, and `\` is scanl.
+
 Hence, you will most likely never need recursion and branching in most situations.
 
 Each (`'`) is an adverb which takes a function or verb and applies the function on each element of an array. Yes, the symbol for each is a single quote.
-
----
 
 ### `f' x` Each
 
@@ -18,9 +21,6 @@ Each (`'`) is an adverb which takes a function or verb and applies the function 
 
 **Description:** Apply function to each element of array.
 
----
-
-
 For example, to reverse an array, we can use the `|` verb:
 
 ```
@@ -28,7 +28,7 @@ For example, to reverse an array, we can use the `|` verb:
 3 2 1
 ```
 
----
+
 
 ### `| x` Reverse
 
@@ -38,7 +38,7 @@ For example, to reverse an array, we can use the `|` verb:
 
 **Description:** reverse the elements of an array.
 
----
+
 
 and to reverse each row of a 2D array, we can do `|'`:
 
@@ -55,7 +55,7 @@ and to reverse each row of a 2D array, we can do `|'`:
 
 Each can also be used dyadically, and this form is called eachboth:
 
----
+
 
 ### `x f' y` Each Dyad
 
@@ -65,7 +65,7 @@ Each can also be used dyadically, and this form is called eachboth:
 
 **Description:** Apply dyadic function to each element of both arrays. 
 
----
+
 
 Each dyad zips two arrays together with a dyadic function, creating an array of the results. Both `x` and `y` must have the same length, unless either of them are atoms. When an atom is given, it is repeated to the length of the other argument (`5 f' 1 2 3` is the same as `5 5 5 f' 1 2 3`).
 
@@ -108,7 +108,7 @@ But the best way to do it is with eachleft('\:'):
 
 Eachleft applies a dyadic function to each element in the left array and the entire right argument. 
 
----
+
 
 ### `x f\: y` Each Left
 
@@ -118,7 +118,7 @@ Eachleft applies a dyadic function to each element in the left array and the ent
 
 **Description:** Apply dyadic function to each element of `x` and the whole of `y`. 
 
----
+
 
 The same applies for each right, which you can probably guess the symbol for (`/:`).
 
@@ -126,7 +126,7 @@ The same applies for each right, which you can probably guess the symbol for (`/
 
 Folds and scans are used to combine values from an array to produce one or many results.
 
----
+
 
 ### `x f/ y` Over (Fold from left)
 
@@ -136,7 +136,7 @@ Folds and scans are used to combine values from an array to produce one or many 
 
 **Description:** Fold array `y` from left with a dyadic function. `x` is optional. 
 
----
+
 
 There are many, many useful applications of folds, some of which are:
 
@@ -196,7 +196,7 @@ Scan is the same as fold, *except* it will also give you the intermediate values
        10+5       = 15
 ```
 
----
+
 
 ### `x f\ y` Scan (Scan from left)
 
@@ -206,7 +206,7 @@ Scan is the same as fold, *except* it will also give you the intermediate values
 
 **Description:** Fold array `y` from left with a dyadic function, producing intermediate results in an array. `x` is optional. 
 
----
+
 
 Scans are useful all by themselves, but they are also *very* useful for debugging fold functions and finding out what's going wrong midway.
 

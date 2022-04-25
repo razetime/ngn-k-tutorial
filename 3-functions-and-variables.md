@@ -1,5 +1,7 @@
 # Part 2: Functions and Defining Variables
 
+Now that you have an endless supply of array creation power, you now have to find a way to reuse those neat little arrays.
+
 To define a variable, you type its name followed by a colon:
 
 ```
@@ -40,8 +42,6 @@ dict: `a`b`c ! 1 2 3
 Creates a dictionary `dict` with key-value pairs `` `a:1; `b:2; `c:3``
 
 
----
-
 ### `x!y` Create Dict
 
 **Symbol:** `!`
@@ -49,8 +49,6 @@ Creates a dictionary `dict` with key-value pairs `` `a:1; `b:2; `c:3``
 **Args:** `array ! array`
 
 **Description:** Create a dict with keys `x` and values `y`. `x` and `y` must be of equal length.
-
----
 
 
 You can get values from a dict using square brackets: ``dict[`a]`` will give you `1`.
@@ -110,7 +108,7 @@ function(int x) {
 ```
 
 
----
+
 ### `$[;;..]` If
 
 **Symbol:** `$`
@@ -119,7 +117,7 @@ function(int x) {
 
 **Description:** K's If statement. `$[condition; true; false]` or `$[condition1; true1; condition2; true2; ...; false]`.
 
----
+
 
 So what is truth, and what is a falsehood?
 
@@ -180,7 +178,7 @@ a) Generating a range 0..x-1 - `!x`
 b) multiplying it by 2 (conforming) - `2*`
 c) adding 1 to it (conforming) - `1+`
 
----
+
 ### `! x` Range / Odometer
 
 **Symbol:** `!`
@@ -189,7 +187,7 @@ c) adding 1 to it (conforming) - `1+`
 
 **Description:** range from 0 to `x-1`. Odometer is generalized range: generate indices for indexing into an array of shape `x`.
 
----
+
 
 to convert this to a train, we have to specify arities:
 - `!` is called monadically: `!:`

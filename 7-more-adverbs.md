@@ -1,4 +1,4 @@
-# Part 5: More Looping adverbs
+# Part 5: More Adverbs
 
 Most of the time, you can manage to write good K programs with neat little eaches and folds and scans. But *some* algorithms choose not to use arrays. Some algorithms insist on themselves, and that's why K has its own version of explicit loops from other languages:
 
@@ -11,7 +11,7 @@ When given a number `n` and a function on the left, `/` acts as a *for* loop:
 
 A for loop will apply a monadic function `n` times to a given value.
 
----
+
 
 ### `x f/ y` For
 
@@ -21,8 +21,6 @@ A for loop will apply a monadic function `n` times to a given value.
 
 **Description:** Apply function `f` `x` times to value `y`.
 
----
-
 
 The same overload for `\` will produce the intermediate values of the *for*, like a scan:
 
@@ -30,8 +28,6 @@ The same overload for `\` will produce the intermediate values of the *for*, lik
  3 {1+x}\0
 0 1 2 3
 ```
-
----
 
 ### `x f\ y` For (Scan)
 
@@ -41,7 +37,7 @@ The same overload for `\` will produce the intermediate values of the *for*, lik
 
 **Description:** Apply function `f` `x` times to value `y`. Collect intermediate values of `y` in an array.
 
----
+
 
 When given two monadic functions on the left, `/` acts as a while:
 
@@ -50,7 +46,7 @@ When given two monadic functions on the left, `/` acts as a while:
 5
 ```
 
----
+
 
 ### `f g/ z` While
 
@@ -60,7 +56,7 @@ When given two monadic functions on the left, `/` acts as a while:
 
 **Description:** Apply function `g` to `z` until `f[z]` is falsy. 
 
----
+
 
 The truthy and falsy values for while are the same as it is for If(`$`). You can rehash on what they are by checking [Part 2](pt2.md#-if).
 
@@ -85,7 +81,7 @@ Let's start with *converge*:
 
 Converge applies a verb to a value till the value no longer changes, and it's also called *fixpoint* due to that reason.
 
----
+
 
 ### `g/ z` Converge
 
@@ -95,10 +91,10 @@ Converge applies a verb to a value till the value no longer changes, and it's al
 
 **Description:** Apply function `g` to `z` until `g[z]` matches `z`.
 
----
 
 
----
+
+
 
 ### `x _ y` Drop
 
@@ -108,7 +104,7 @@ Converge applies a verb to a value till the value no longer changes, and it's al
 
 **Description:** Drop the first `x` elements of `y`. If `x` is negative, drop the last `x` elements.
 
----
+
 
 
 *Converge-scan* is the scan(`\`) version of the same, and returns the intermediate results:
@@ -138,7 +134,7 @@ Since the first element of an array doesn't have anything before it, eachprior a
 1 3 5 7
 ```
 
----
+
 
 ### `x f': y` Eachprior
 
@@ -148,7 +144,7 @@ Since the first element of an array doesn't have anything before it, eachprior a
 
 **Description:** for each element `b` in the array and the element `a` before it, calculate `f[b;a]`. If `x` is not provided, The first element is left unchanged.
 
----
+
 
 Stencil is a more general version of what eachprior does:
 
@@ -162,7 +158,7 @@ Stencil is a more general version of what eachprior does:
 The main difference between stencil and eachprior is that stencil applies a function to each n-length chunk, instead of passing in elements as arguments.
 
 
----
+
 
 ### `x f': y` Stencil
 
@@ -172,12 +168,12 @@ The main difference between stencil and eachprior is that stencil applies a func
 
 **Description:** apply `f` to each overlapping `x`-length chunk in array `y`.
 
----
+
 
 To simply get the chunks of the array, we can use the identity function `::`: `num ::': array`, but there is a more convenient adverb for it: `x ': array`, which is called *window*.
 
 
----
+
 
 ### `x ': y` Window
 
@@ -187,7 +183,7 @@ To simply get the chunks of the array, we can use the identity function `::`: `n
 
 **Description:** get each overlapping `x`-length chunk in array `y`.
 
----
+
 
 It may be quite surprising at first that window does not take a function, but be not afraid. Window behaves like any other function, and can be stored as well.
 
@@ -216,7 +212,7 @@ Generally, filtering in K is done with the help of `&`(find), which repeats the 
 0 2 4
 ```
 
----
+
 
 ### `& x` Find
 
@@ -226,7 +222,7 @@ Generally, filtering in K is done with the help of `&`(find), which repeats the 
 
 **Description:** Repeat the index of each element in `x` by the value of each element in `x`.
 
----
+
 
 this can be used in tandem with `@` to select values from an array:
 ```

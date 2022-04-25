@@ -1,6 +1,8 @@
 # Thinking in an array language
 
-Since you are now acquainted with K's basics, let's do some programming.
+*You can view the full source code for this chapter at [GitHub](code/matmul.k).*
+
+Since you are now properly acquainted with K, let's do some programming.
 Most K programming happens through the REPL, because it is very useful to iterate upon previous code. ngn/k with rlwrap has history with the up/down arrow keys, and that should be more than enough to begin developing bigger programs in K. Functions are tested in the REPL, and then moved to actual code. Note that ngn/k's prettyprinting always returns valid k data, and you can precompute some things beforehand to speed up your program.
 
 A K script is always executed like it was typed in the repl, that is: Each line is executed, and its return value is printed *unless* it ends with a semicolon. A script also allows multiline definitions, which are convenient for readability. Oftentimes, you may save your work in a script, and want to use it in a repl. In order to use your stored data and functions, just do `\l file.k` in the repl, and your file will be executed, and its data will be loaded. You can load a file into the REPL more than once, overwriting older data. The repl help accessed with `\` lists more useful commands as well.

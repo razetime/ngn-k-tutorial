@@ -1,4 +1,4 @@
-# Part 3: Arrays, Dictionaries and Functions
+# Part 3: Indexing and Application
 
 K is 0-indexed, which means arrays start at 0.
 
@@ -12,7 +12,7 @@ So why Arrays, dictionaries and functions together? Because they all do one sing
 
 The first method of application is called **at**. 
 
----
+
 
 ### `f@x` At
 
@@ -22,7 +22,7 @@ The first method of application is called **at**.
 
 **Description:** Applies a noun `f` given on its left to a single argument `x` given on its right.
 
----
+
 
 For a function, `@` treats `x` like it is a single value, and provides it to `f`.
 
@@ -49,23 +49,7 @@ for a function call, you can do `f[a;b;c]`. Remember that function calls include
 
 this means that `+[1;2]` is the same as `1+2`, and you can effectively translate most K programs to use M-expressions only.
 
-For an array, each argument indexes into a different dimension.
-Before we get to multidimensional indexing, let us get to know reshape:
-
----
-
-### `x#y` Reshape
-
-**Symbol:** `#`
-
-**Args:** `numeric array # (array/atom)`
-
-**Description:** Reshapes elements of argument `y` as per the dimensions given in `x`, repeating elements as necessary.
-
----
-
-Reshape is a powerful tool for generating arrays of any kind. Here, for our example:
-
+For an array, each argument indexes into a different dimension;
 ```
  :a:3 3#1 2 3 4 5 6 7 8 9
 (1 2 3
@@ -87,7 +71,7 @@ Like with @, you can also use arrays to index into any dimension: `a[0 1;2]` wil
 
 The final form of application is dot (`.`).
 
----
+
 
 ### `f.x` Dot
 
@@ -97,7 +81,7 @@ The final form of application is dot (`.`).
 
 **Description:** Applies a noun `f` to the arguments given in array `x`.
 
----
+
 
 Dot application takes a noun on the left, and an array on the right. Each array element is taken as an argument.
 
