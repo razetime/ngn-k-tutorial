@@ -11,8 +11,7 @@ Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) secti
 
 # Progress:
 <details>
-<summary>Verb coverage: **complete**</summary>
-
+<summary>Verb coverage: complete</summary>
  - [x] identity
  - [x] right
  - [x] plus
@@ -68,3 +67,31 @@ Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) secti
  - [x] values
  - [x] if
 </details>
+
+<details> 
+<summary> Adverb coverage: </summary>
+- [x] each
+- [ ] binary search
+- [x] over 
+- [x] fixedpoint
+- [x] for
+- [x] while
+- [ ] join
+- [ ] base encode	
+- [x]	scan
+- [x] scan-fixedpoint
+- [x] scan-for
+- [x] scan-while 
+- [ ] split
+- [ ] base decode
+- [x]	each prior 
+- [ ] windows
+- [x] each right
+- [x]	each left
+
+</details>
+
+# Credits
+ - [ngn](https://codeberg.org/ngn/k) many tidbits and useful knowledge on the workings of ngn/k
+ - @chrispsn, @Traws, @ColTim for ideas on the Prelude chapter
+ - @HoosierEE for help with proofreading and many useful edits
