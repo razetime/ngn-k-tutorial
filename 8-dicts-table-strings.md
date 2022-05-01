@@ -84,9 +84,27 @@ Dyadic `$` is pad with spaces. Padding conforms to atoms on the left, and string
   "cd    "))
 ```
 
+Some adverbs have useful string related overloads:
+
+`x \ y` is split. Splits `y` on `x`. 
+```
+ " "\"string with spaces"
+("string"
+ "with"
+ "spaces")
+```
+
+Naturally, `x / y` is join. Joins `y` on `x`.
+```
+ "|"/("string";"without";"spaces")
+"string|without|spaces"
+```
+
+Note that these adverbs *only* work on strings and nothing else.
+
 ### The Rest
 
-**Random number functions**
+#### Random number functions
 
 Dyadic `?` when given two integers `x` and `y` generates `x` random integers from `!y`.
 
@@ -96,7 +114,57 @@ Negative `x` will not allow repetition, and if the absolute value of `x` is grea
 
 Monadic `?` when given a single integer `x` will generate an array of random floats between 0 and 1 of length `x`,
 
----
+#### Base Decode and Encode (`\` and `/`)
+
+ngn/k's base conversion adverbs are generalized: this means that you can do mixed-radix conversion and other cool things.
+
+The simplest use, and the most often use for this, is conversion to and from base 2:
+
+```
+ 2 \ 5
+5
+'rank
+ 
+ ^
+
+ 2 / 5
+2
+```
+
+Wait a moment: that isn't right. Both of these results are wrong, and one of them is an error!
+
+**Print debugging and comments**
+The reason for this is one of K's limitations: `\` and `/` are interpreted differently based on the whitespace before them, and hence, the space before them changes their meaning.
+
+Hence` \ 5` is hence interpreted as "pretty print 5 to stdout, and return its value", and `/ 5` is interpreted as a K comment.
+
+In order to fix this, just remove the space.
+
+```
+ 2\5
+1 0 1
+ 2/1 0 1
+5
+```
+
+For mixed radix, we can try some time conversion: hours, minutes and seconds to seconds:
+
+```
+ 24 60 60/2 46 40
+10000
+```
+
+These adverbs also generalize to arrays, and can perform base conversion on multiple numbers:
+```
+ 2\5 6 7
+(1 1 1
+ 0 1 1
+ 1 0 1)
+ 2/(1 1 1;0 1 1;1 0 1)
+5 6 7
+```
+
+#### Miscellaneous
 
 Monadic `=` when given a single integer `x` will produce an identity matrix of side length `x`.
 ```

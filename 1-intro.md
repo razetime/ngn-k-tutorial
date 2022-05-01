@@ -74,12 +74,15 @@ will do absolutely nothing!
 
 To actually display a string without K's formatting, you can do this:
 ```
+/ an actual hello world program
 ` 0:"Hello, World!"
 ```
 
 In this program, <code>\` 0:</code> is the equivalent of a print statement in any other language. It will print 
 a simple character array given to it with a newline at the end. You can change it to <code>\` 1:</code> if you 
 want to display without a newline.
+
+The line starting with a `/` is a comment. You can also use comments inline.
 
 Reminder: K's "operators" have no precedence. So the interpreter reads <code>"Hello World"</code> first, then 
 <code>0:</code>, then the backtick.
