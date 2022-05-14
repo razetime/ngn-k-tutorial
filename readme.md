@@ -71,21 +71,21 @@ Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) secti
 <details> 
 <summary> Adverb coverage: </summary>
 - [x] each
-- [ ] binary search
+- [x] binary search
 - [x] over 
 - [x] fixedpoint
 - [x] for
 - [x] while
-- [ ] join
-- [ ] base encode	
+- [x] join
+- [x] base encode	
 - [x]	scan
 - [x] scan-fixedpoint
 - [x] scan-for
 - [x] scan-while 
-- [ ] split
-- [ ] base decode
+- [x] split
+- [x] base decode
 - [x]	each prior 
-- [ ] windows
+- [x] windows
 - [x] each right
 - [x]	each left
 
