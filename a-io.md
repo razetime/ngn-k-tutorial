@@ -84,7 +84,7 @@ These are the command line arguments I get when running the ngn/k repl:
  "/home/razetime/Software/k/repl.k")
 ```
 
-The first argument will always be the K binary, and the second argument will be the path to your K program, so usually you would want to do `` `2_argv[]`` and then take the arguments you need.
+The first argument will always be the K binary, and the second argument will be the path to your K program, so usually you would want to do `` 2_`argv[]`` and then take the arguments you need.
 
 Here are some of the other useful console values:
 
