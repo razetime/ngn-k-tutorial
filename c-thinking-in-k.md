@@ -138,7 +138,7 @@ Now *that* is matrix multiplication in K. This is the most direct algorithmic co
 matmul: {x{+/x*y}\:y}
 ```
 
-Now, we have a function which can be easily made tacit. With the rules from [Chapter 2](3-functions-and-variables.md#trains), we get our final result:
+Now, we have a function which can be easily made tacit. With the rules from [Chapter 3](3-functions-and-variables.md#trains), we get our final result:
 
 ```
 matmul: (+/*)\:
