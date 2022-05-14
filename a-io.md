@@ -84,13 +84,13 @@ These are the command line arguments I get when running the ngn/k repl:
  "/home/razetime/Software/k/repl.k")
 ```
 
-The first argument will always be the K binary, and the second argument will be the path to your K program, so usually you would want to do `2_argv[]` and then take the arguments you need.
+The first argument will always be the K binary, and the second argument will be the path to your K program, so usually you would want to do `` `2_argv[]`` and then take the arguments you need.
 
 Here are some of the other useful console values:
 
 - `` `t`` gives the current time in microseconds.
 - `` `env`` returns a dictionary containing the names of all environment variables mapped to their values.
-- `` `prng[]`` is a pseudo-random number generator.
+- `` `prng`` is a pseudo-random number generator.
 
 There are a few more special symbols available in the K repl(like `` `json``) which you can find by typing ``\` `` in the REPL.
 

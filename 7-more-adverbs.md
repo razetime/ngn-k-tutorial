@@ -192,8 +192,8 @@ Why isn't *window* a verb, if it doesn't take a function, then? A K interpreter 
 ## More adverb overloads
 Now that you have seen window, we can look at some more neat adverbs:
 
-- *base encode* (`int(x) / int(y)`) converts a base-10 integer to an array of digits specified by the bases on the left. If `y` is an array, every number in `y` is encoded into a column.
-- *base decode* (`int(x) \ int(y)`) is the inverse of base encode.
+- *base encode* (`int(x) \ int(y)`) converts a base-10 integer to an array of digits specified by the bases on the left. If `y` is an array, every number in `y` is encoded into a column.
+- *base decode* (`int(x) / int(y)`) is the inverse of base encode.
 - *split* (`string(x) \ string(y)`) splits `y` on string `x`.
 - *join* (`string(x) / array(y)`) joins array `y` on string `x`.
 - *binary search* (`any(x) ' array(y)`) does a binary search for each element of `x` in `y`. If you do not know what a binary search is, I recommend reading [this article](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
