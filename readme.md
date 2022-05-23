@@ -1,5 +1,5 @@
 # ngn-k-tutorial
-An ngn/k tutorial.
+An [ngn/k](https://codeberg.org/ngn/k) tutorial.
 
 ## How to use this tutorial
 
@@ -10,6 +10,7 @@ The progression will start from explaining basic primitives, and move on to bigg
 Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary and doing the exercises in each part before moving on the next lesson.
 
 # Progress:
+Currently, the main introduction to ngn/k is complete. More practical chapters will be added.
 <details>
 <summary>Verb coverage: complete</summary>
  - [x] identity
