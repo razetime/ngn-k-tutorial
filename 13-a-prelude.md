@@ -56,7 +56,7 @@ a) reuse a sequence of symbols that are shorter than a name
 b) Use short names for widely reused functions. Some people like to keep things within 1-2 characters max. You don't have to,
    but it's often useful to understand terse code when working with K, because you will be seeing a lot of it.
 
-**Note:** Many sets of symbols are smaller than their names, but they can be difficult to understand. You can store these as a 
+**Note:** Many sets of symbols are smaller than their names, but they can be difficult to remember. You can store these as a 
 list of strings, and print them with a help function, say:
 
 ```
