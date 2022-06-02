@@ -7,7 +7,7 @@ regularly.
 Apart from words, ngn/k allows unicode verbs, if you are into that:
 ```
 (≠):~=
-(≠:):/ Insert monadic ≠ here
+(≠:):   / Insert monadic ≠ here
 ```
 The unicode symbols must always be put in parentheses, and you can omit either definition. 
 
