@@ -94,5 +94,5 @@ Currently, the main introduction to ngn/k is complete. More practical chapters w
 
 # Credits
  - [ngn](https://codeberg.org/ngn/k) many tidbits and useful knowledge on the workings of ngn/k
- - @chrispsn, @Traws, @ColTim for ideas on the Prelude chapter
+ - @chrispsn, @Traws, @ColTim for ideas on the Prelude chapter, and primitive implementations
  - @HoosierEE for help with proofreading and many useful edits
