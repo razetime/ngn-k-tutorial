@@ -44,9 +44,9 @@ Now, for a simple sign function. Luckily, we already have absolute value:
 ```
 sgn:{x%abs x}
 ```
-Ceiling is just floor + 1:
+Ceiling is the negation of negated floor:
 ```
-ceil:1+_
+ceil:-_-:
 ```
 What we see here is that the name `ceil` is bigger than its definition. You can simply delete this, and remember `1+_` as ceil,
 cause that removes the need for a word. 
@@ -75,6 +75,7 @@ Not equal to is in the same category as ceil. `neq:(~=)` is quite redundant, so 
 We can use the Euclidean GCD algorithm, and LCM can be derived from GCD, so one of them comes for free.
 ```
 gcd:{$[y>0;o[y;y!x];x]}
+lcm:{(x*y)%gcd[x;y]}
 ```
 Every recursive algorithm can be converted to an algorithm using iteration. let's try that. A few things can be noted:
 1. Iterate as long as y is not zero.
@@ -124,16 +125,16 @@ what's better is that this works directly on strings, since all its operations c
 If you find a function that needs to be applied to each element of an array, always check if you can make it conform without the
 each. Now, the tolower function becomes much easier: just add 32 to each place with a 1.
 ```
-tolwr:{x+32*islwr x}
+toupr:{x-32*islwr x}
 ```
 but this yields a list of numbers:
 ```
- tolwr "UPPERcase123"
-85 80 80 69 82 131 129 147 133 49 50 51
+  toupr "UPPERcase123"
+85 80 80 69 82 67 65 83 69 49 50 51
 ```
 to remedy this, we need to just cast them back to characters:
 ```
-tolwr:{`c$x+32*islwr x}
+toupr:{`c$x-32*islwr x}
 ```
 
 Basic string replacement can work using a simple split and join:
