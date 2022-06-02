@@ -86,8 +86,8 @@ A simple way to get this with while would be:
 gcd:{*({y>0}.)({y,y!x}.)/x,y}
 ```
 
-Trigonometric functions can all be derived from `` `sin ``, which is a special symbol in ngn/k. If `` `sin 0`` is giving you 
-`0n`, then make sure that you reinstall ngn/k with `make k-libc`.
+Trigonometric functions can all be derived from `` `sin ``, which is a special symbol in ngn/k (see the help topic at ``\` ``).
+ If `` `sin 0`` is giving you `0n`, then make sure that you reinstall ngn/k with `make k-libc`.
 
 Using trigonometric identities, we can derive the following:
 ```
