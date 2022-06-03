@@ -123,7 +123,7 @@ what's better is that this works directly on strings, since all its operations c
 0 0 0 0 1 1 1 1 
 ```
 If you find a function that needs to be applied to each element of an array, always check if you can make it conform without the
-each. Now, the tolower function becomes much easier: just add 32 to each place with a 1.
+each. Now, the toupr function becomes much easier: just add 32 to each place with a 1.
 ```
 toupr:{x-32*islwr x}
 ```
