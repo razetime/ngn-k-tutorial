@@ -26,7 +26,7 @@ The first method of application is called **at**.
 
 For a function, `@` treats `x` like it is a single value, and provides it to `f`.
 
-`- @ 1` gives `-1`.
+`(-:) @ 1` gives `-1`.
 
 For a dictionary or an array, `@` can take a single index:
 
