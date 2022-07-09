@@ -106,7 +106,8 @@ Note that these adverbs *only* work on strings and nothing else.
 
 #### Random number functions
 
-Dyadic `?` when given two integers `x` and `y` generates `x` random integers from `!y`.
+Dyadic `?` when given two integers `x` and `y` generates `x` random integers from `!y`. If `x` is negative, this will be a
+random permutation.
 
 If `y` is an array, then it will deal `x` elements from it. Both of these allow repetitions.
 
