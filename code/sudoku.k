@@ -25,7 +25,7 @@ gen: { / generate a random sudoku board.
 
 / Displaying a puzzle
 fmt: { / format a given 9x9 matrix as a sudoku board.
- s: ((" "/'$x),,17#"-")@{x,9,y}/3 3#!9
+ s:(" "/'$x)?[;;,17#"-"]/6 3
  s[;5 11]:11#+2 4#"|||+"
  s}
 

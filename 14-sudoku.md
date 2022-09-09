@@ -114,11 +114,19 @@ A sudoku puzzle has lines akin to a tic tac toe puzzle. The default K prettyprin
 newspaper is nicer.
 
 There are many different approaches you can use to make this. Here, I will be modifying a character array to get the desired
-result. First, we add the horizontal lines using slicing and indexing:
+result. First, we add the horizontal lines using the splice form `?`:
 
 ```
-s: ((" "/'$x),,17#"-")@{x,9,y}/3 3#!9
+s:(" "/'$x)?[;;,17#"-"]/6 3
 ```
+
+This may be confusing, but it is simpler if you realize that this is just a fold with a 2-element projection. In `x f/y`,
+```
+x: " "/'$x
+f: ?[;;,17#"-"]
+y: 6 3
+```
+
 
 Then, we add some vertical lines (and their intersections) with the help of a column projection:
 ```
