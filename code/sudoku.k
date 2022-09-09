@@ -19,8 +19,8 @@ sg: (1 2 3 4 5 6 7 8 9  / a pre-solved grid.
 / Creating a Puzzle
 gen: { / generate a random sudoku board.
        / https://stackoverflow.com/a/61442050/4568534
-  s1: (0,1+-9?9)@sg            / shuffle the numbers around from the grid.
-  s2: 2{+x@,/0 3 6+-3?'3#3}/s1 / shuffle rows in each 3x9 block, cols in each 9x3 block
+  s1: (0,1+0N?9)@sg            / shuffle the numbers around from the grid.
+  s2: 2{+x@,/0N?'3 3#!9}/s1 / shuffle rows in each 3x9 block, cols in each 9x3 block
   2{+x@,/(!3)+/:3*-3?3}/s2}     / shuffle 3x9 row blocks, 9x3 col blocks
 
 / Displaying a puzzle

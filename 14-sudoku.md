@@ -38,7 +38,7 @@ This initializes it with the current time.
 For the first step, we generate a random permutation of the numbers 1 to 9, and index into them (see chapter 8 for the random
 function `?`):
 ```
-s1: (0,1+-9?9)@sg
+s1:(0,1+0N?9)@sg 
 ```
 Since we have to exclude 0, we prepend it to make sure it is never used.
 
@@ -86,7 +86,7 @@ For the second step, we have to shuffle individual 3-row and 3-column blocks.
 
 The following line does both the shuffles at once, transposing the array twice.
 ```
-s2: 2{+x@,/0 3 6+-3?'3#3}/s1
+s2: 2{+x@,/0N?'3 3#!9}/s1
 ```
 
 You can try deriving the third step from the above snippet. If you're having trouble, you can reveal the spoiler here:
