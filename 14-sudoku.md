@@ -299,7 +299,7 @@ We can add `n` empty spaces to a board like so:
 nz:{b:,/x;9 9#@[b;y?&~0=b;:;0]}
 ```
 
-To check whether it is valid, all we need to check is if `1=#sudoku nz board`. 
+To check whether a puzzle is valid, all we need to check is if `1=#sudoku x`. 
 
 To generate a random board and test this, you can use `gen[]`. 
 ```
