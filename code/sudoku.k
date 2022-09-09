@@ -15,6 +15,7 @@ sg: (1 2 3 4 5 6 7 8 9  / a pre-solved grid.
      6 4 5 9 7 8 3 1 2
      9 7 8 3 1 2 6 4 5)
 
+`prng@0
 / Creating a Puzzle
 gen: { / generate a random sudoku board.
        / https://stackoverflow.com/a/61442050/4568534

@@ -28,6 +28,13 @@ You can use any grid you want as long as it's a valid, completely solved sudoku 
 
 Let us name this function `gen`.
 
+Before doing any random number generation, we must seed the randomizer with `` `prng``:
+```
+`prng@0
+```
+
+This initializes it with the current time.
+
 For the first step, we generate a random permutation of the numbers 1 to 9, and index into them (see chapter 8 for the random
 function `?`):
 ```
