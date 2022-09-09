@@ -310,7 +310,7 @@ Note that the least possible number of hints a sudoku puzzle can have is 17, and
 ## Playing the game
 Now that we have all the important parts done, we can play the game.
 ```
-`1:"The absolute gamer's Sudoku game"
+`1:"Sudoku Puzzle\n"
 ```
 
 First, we ask the player for a number of empty spaces (for difficulty). If it is not numeric or not less than or equal to 64, we should prompt again.
