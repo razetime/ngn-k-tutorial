@@ -1,5 +1,5 @@
 // roger hui
-
+\
 / free x applies to grid x and returns a 9 9 9 boolean array y 
 / such that  y . i,j,k  is 1 iff 1+k can be assigned to cell i,j 
 / of x.
@@ -33,8 +33,8 @@ R:       j,((9*!9)+\:!9),(!9)+\:9*!9            / row, col, block indices.
 
 free:    {(0=x)>(1+!9)in/:/:(,/x)@I}
 regions: {(,/x)@R}
-eu:      {(x in !10)&(0=x)|{(!9)=x?x}'x}
-ok:      {&/,/eu regions x}
+chk:      {(x in !10)&(0=x)|{(!9)=x?x}'x}
+ok:      {&/,/chk regions x}
 s1u:     {m:1=+/'(,/x)@R; j:&|/'m; k:m[j]?\:1b; i:,/(R@j)@'&:'(+:'(,/x)@R@j)@'k
            (9*!9)_@[81#0;i;:;1+k]}
 s1x:     {(+/''x*\:\:1+!9)*1=+/''x}
