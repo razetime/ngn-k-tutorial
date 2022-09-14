@@ -119,7 +119,7 @@ Eachleft applies a dyadic function to each element in the left array and the ent
 
 **Description:** Apply dyadic function to each element of `x` and the whole of `y`. 
 
-
+For example, in `(a; b; c) f\: d` , we will get  `(f[a;d]; f[b;d]; f[c;d])`.
 
 The same applies for each right, which you can probably guess the symbol for (`/:`).
 

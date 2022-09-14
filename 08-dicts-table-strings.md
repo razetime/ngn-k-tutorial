@@ -115,6 +115,8 @@ Negative `x` will not allow repetition, and if the absolute value of `x` is grea
 
 Monadic `?` when given a single integer `x` will generate an array of random floats between 0 and 1 of length `x`,
 
+Finally, `0N?x` where `x` is an array will shuffle `x`. If `x` is a number, then `!x` is used.
+
 #### Base Decode and Encode (`\` and `/`)
 
 ngn/k's base conversion adverbs are generalized: this means that you can do mixed-radix conversion and other cool things.
