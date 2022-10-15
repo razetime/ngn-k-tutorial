@@ -101,7 +101,7 @@ K lets you omit arguments in application.
 
 For functions, omitting arguments implies *partial application*:
 
-`-[1]` or `-[1;]` is a function that does `1-x` given an `x`.
+`-[1;]` is a function that does `1-x` given an `x`.
 
 `-[;1]` is a function that does `x-1` given an x. Basically, Projections will fill in values that you have left empty. 
 
