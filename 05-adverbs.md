@@ -225,18 +225,6 @@ Scans are also one of the main ways that K lets you access intermediate values f
 29 42 57
 ```
 
-*Fold* and *scan* both use the first argument as initial value, and the rest of the arguments as input arrays.
-
-```
- {x+y*z}/[1; 1 2 3; 4 5 6; 7 8 9]
-29 42 57
- {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
-(1 2 3
- 4 5 6
- 7 8 9
- 29 42 57)
-```
-
 ## Vocabulary from this lesson
 - Adverb: A syntactic form which acts like a higher order function on both nouns and verbs.
 - Each: Zap each element with function
