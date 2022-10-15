@@ -88,7 +88,7 @@ the more fun you will have.
 - Concatenation (`x,y`) joins two arrays together, or appends an atomic value to a array.
 - Take (`x#y`) takes elements from the beginning or the end of a array
 - Drop (`x_y`) drops elements from the beginning or the end of a array
-- Cut (`x_y`) cuts an array at the indices given.
+- Cut (`x_y`) cuts (partitions) an array at the indices given.
 - Delete (`x_y`) removes an element at a given index.
 - Except (`x^y`) removes the elements of one array from another.
 - Flip (`+x`) transposes a rectangular array.
