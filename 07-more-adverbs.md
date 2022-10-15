@@ -1,4 +1,4 @@
-# Part 5: More Adverbs
+# More Adverbs
 
 Most of the time, you can manage to write good K programs with neat little eaches and folds and scans. But *some* algorithms choose not to use arrays. Some algorithms insist on themselves, and that's why K has its own version of explicit loops from other languages:
 
@@ -12,7 +12,6 @@ When given a number `n` and a function on the left, `/` acts as a *for* loop:
 A for loop will apply a monadic function `n` times to a given value.
 
 
-
 ### `x f/ y` For
 
 **Symbol:** `/`
@@ -24,10 +23,6 @@ A for loop will apply a monadic function `n` times to a given value.
 
 The same overload for `\` will produce the intermediate values of the *for*, like a scan:
 
-```
- 3 {1+x}\0
-0 1 2 3
-```
 
 ### `x f\ y` For (Scan)
 
@@ -38,15 +33,22 @@ The same overload for `\` will produce the intermediate values of the *for*, lik
 **Description:** Apply function `f` `x` times to value `y`. Collect intermediate values of `y` in an array.
 
 
-
-When given two monadic functions on the left, `/` acts as a while:
-
 ```
- {x<5}{1+x}/0 # While x is less than 5, add 1 to x.
-5
+ 3 {1+x}\0
+0 1 2 3
 ```
 
+When called with more than three arguments, *For* and *For scan* both use the first argument as initial value, and the rest of the arguments as input arrays.
 
+```
+ {x+y*z}/[1; 1 2 3; 4 5 6; 7 8 9]
+29 42 57
+ {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
+(1 2 3
+ 4 5 6
+ 7 8 9
+ 29 42 57)
+```
 
 ### `f g/ z` While
 
@@ -56,16 +58,20 @@ When given two monadic functions on the left, `/` acts as a while:
 
 **Description:** Apply function `g` to `z` until `f[z]` is falsy. 
 
+When given two monadic functions on the left, `/` acts as a while:
 
+```
+ {x<5}{1+x}/0 # While x is less than 5, add 1 to x.
+5
+```
 
-The truthy and falsy values for while are the same as it is for If(`$`). You can rehash on what they are by checking [Part 2](pt2.md#-if).
+The truthy and falsy values for while are the same as it is for If(`$`). You can rehash on what they are by checking [Part 2](02-working-with-arrays.md)).
 
 While-scan is quite self-explanatory (It provides the intermediate results of a while loop):
 ```
  {x<5}{1+x}\0
 0 1 2 3 4 5
 ```
-
 
 
 ## Other looping adverbs
