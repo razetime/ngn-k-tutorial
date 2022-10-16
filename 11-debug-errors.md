@@ -154,6 +154,20 @@ You can also throw custom errors using `` `err``, which will throw an error with
      ^
 ```
 
+## Inspecting functions internal bytecode
+All user defined functions in K are compiled to a bytecode. It can be inspected using `!`:
+
+```
+!{n:42; x+y+n+1}
+("{n:42; x+y+n+1}"             / function code itself
+ 0x0268424a67694a214921502100  / bytecode
+ 0xff00020202000b0c090a070800  / bytecode metadata (which local variable to use, reference counting related instructions, etc)
+ `x`y`n                        / list of local variables
+ ::                            / constants used
+ 42
+ 1)
+```
+
 ## Vocabulary from this chapter
 none.
 
