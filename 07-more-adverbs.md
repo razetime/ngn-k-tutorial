@@ -211,7 +211,7 @@ These *can* be implemented using the help of K's primitives (and K's philosophy 
 
 Two important functional programming primitives: `#`(filter) and `_`(filter-out) are not adverbs, since they don't quite fit in the overloads, but they are still quite important in general code.
 
-Generally, filtering in K is done with the help of `&`(find), which repeats the index of each element by the value of each element:
+Generally, filtering in K is done with the help of `&`(where), which repeats the index of each element by the value of each element:
 
 ```
  &1 0 1 0 1
@@ -220,7 +220,7 @@ Generally, filtering in K is done with the help of `&`(find), which repeats the 
 
 
 
-### `& x` Find
+### `& x` Where
 
 **Symbol:** `&`
 
