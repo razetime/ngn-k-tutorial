@@ -98,7 +98,7 @@ One way to solve it is using a projection:
  2 0)
 ```
 
-But the best way to do it is with eachleft('\:'):
+But the best way to do it is with eachleft(`\:`):
 
 ```
  1 2 3 !\: 5 6
@@ -221,7 +221,7 @@ Scans are also one of the main ways that K lets you access intermediate values f
  29 42 57)
 ```
 ```
- {x+y*z}'[1 2 3; 4 5 6; 7 8 9]
+ {x+y*z}/[1 2 3; 4 5 6; 7 8 9]
 29 42 57
 ```
 
