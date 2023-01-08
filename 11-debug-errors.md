@@ -61,8 +61,6 @@ but the values of the arguments are not supported (they are not in the right dom
 1?-1           / negative range does not work
 1 2_()         / empty array cannot be dropped from
 -1 2_(1 2;3 4) / negative drop values do not work on a 2d array
-
-**Example:**```
 ```
 
 ### `'index`
