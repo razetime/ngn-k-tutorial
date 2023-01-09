@@ -11,7 +11,7 @@ Apart from words, ngn/k allows unicode verbs, if you are into that:
 ```
 The unicode symbols must always be put in parentheses, and you can omit either definition. 
 
-Unicode verbs occupy the same class as primitive verbs i.e. thaey can be used infix in a K expression once they
+Unicode verbs occupy the same class as primitive verbs i.e. they can be used infix in a K expression once they
 are defined. However, the QWERTY keyboard is where we are working, and the QWERTY keyboard is where we will stay.
 
 Now, we can begin on our Prelude. Go to your ngn/k folder (most people install at `$HOME/k`), 
