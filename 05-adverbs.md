@@ -246,6 +246,6 @@ Scans are also one of the main ways that K lets you access intermediate values f
 - Scan: fold but outputs intermediate values as an array.
 
 ## Exercises
-1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single scan.
+1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single fold.
 2. ngn/k's primitive symbols can be found in this page: https://k.miraheze.org/wiki/Primitives. Experiment with folds using any primitives you like. What unexpected things happen?
 3. Convert an array of base-2 digits to a base-10 integer using a fold. `f/1 0 1` -> `5`.
