@@ -144,7 +144,7 @@ There are many, many useful applications of folds, some of which are:
 Fold | Verb        | What it Does                       | Example
 ---- | ----------- | ---------------------------------- | ----------------
 `+/` | Add         | Sum                                | `+/1 2 3` -> `6`
-`*/` | Subtract    | Product                            | `*/3 4 5` -> `60`
+`*/` | Multiply    | Product                            | `*/3 4 5` -> `60`
 `\|/`| Maximum     | Maximum                            | `\|/3 5 1` -> `5`, `\|/1 0 0` -> `1`
 `&/` | Minimum     | Minimum                            | `&/3 5 1` -> `1`, `&/1 0 1 1` -> `0`
 `,/` | Concatenate | Join all elements together (Raze)  | `,/(1 2 3; 4 5 6)` -> `1 2 3 4 5 6`
