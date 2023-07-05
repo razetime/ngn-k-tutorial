@@ -144,7 +144,7 @@ There are many, many useful applications of folds, some of which are:
 Fold | Verb        | What it Does                       | Example
 ---- | ----------- | ---------------------------------- | ----------------
 `+/` | Add         | Sum                                | `+/1 2 3` -> `6`
-`*/` | Subtract    | Product                            | `*/3 4 5` -> `60`
+`*/` | Multiply    | Product                            | `*/3 4 5` -> `60`
 `\|/`| Maximum     | Maximum                            | `\|/3 5 1` -> `5`, `\|/1 0 0` -> `1`
 `&/` | Minimum     | Minimum                            | `&/3 5 1` -> `1`, `&/1 0 1 1` -> `0`
 `,/` | Concatenate | Join all elements together (Raze)  | `,/(1 2 3; 4 5 6)` -> `1 2 3 4 5 6`
@@ -246,6 +246,6 @@ Scans are also one of the main ways that K lets you access intermediate values f
 - Scan: fold but outputs intermediate values as an array.
 
 ## Exercises
-1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single scan.
+1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single fold.
 2. ngn/k's primitive symbols can be found in this page: https://k.miraheze.org/wiki/Primitives. Experiment with folds using any primitives you like. What unexpected things happen?
 3. Convert an array of base-2 digits to a base-10 integer using a fold. `f/1 0 1` -> `5`.
