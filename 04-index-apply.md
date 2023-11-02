@@ -111,9 +111,13 @@ For example, this snippet should return a function that adds `a` to its argument
 
 ```
  f:{a:x;{a+x}}[1]
- a[1]
+ f[1]
 'value
- a[1]
+ {a+x}
+  ^
+  f[1]
+     ^
+
 ```
 
 here, `{a+x}` can't see the value of a, since `a` is outside of its block, and `a` is not global.
