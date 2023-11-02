@@ -41,11 +41,59 @@ or an array of indices:
 `67 78 89 @ 0 2` -> `67 89`
 
 
-all forms of application behave in this manner i.e. they will always index into atomic values and preserve the shape of the indices.
+All forms of application behave in this manner i.e. they will always index into atomic values and preserve the shape of the indices.
 
 If you index outside of an array's length, you will get a null value corresponding to the type of the array:
 
 `67 78 89 @ 56` -> `0N`
+
+#### Implicit At Indexing
+Implicit At Indexing is what happens when K sees two noun values in a row. The simplest way to understand this is with functions:
+```
+f:{1+x}
+f 2
+```
+Here, K sees two nouns: `f` and `2`, so it applies `f` to `2`. `{1+x}2` and `{1+x}@2` do the exact same thing.
+
+With arrays, you can expect to see stuff like this in a lot of K code:
+```
+"abcde"1 2
+```
+This is the same as `"abcde"@1 2`.
+
+Many beginners find this ambigous as they are not fully clear on when K decides to do this. Let's say that we want to apply
+`{1+x}` to the square root of 2. `%x` takes the square root, so we can do `{1+x}@%2`. But what about this?
+```
+{1+x} %2
+```
+Seems correct, right? K seems to think otherwise:
+```
+'type
+  {1+x}%2
+       ^
+```
+The problem, which isn't obvious through the type error, is that you are not giving K two nouns one after the other.
+```
+{1+x} %2
+|---| ||
+  |   |+-noun
+  |   +--verb
+  +------noun
+```
+
+So it is computing `{1+x}` divided by 2. It's important to remember that all of K's verbs have overloads for different numbers and types of arguments.
+Basically, we have written it in a way that makes K use division instead of square root. To fix this, we can wrap the argument in parentheses,
+making sure K sees a noun.
+```
+{1+x} (%2)
+|---| |--|
+  |     |
+  |     +--noun
+  +--------noun
+```
+As you may have noticed, `{1+x}@%2` is simpler and shorter. Implicit indexing is a nice convenience in many other cases, so don't be afraid to use it!
+
+### M-Expressions
 
 The second form of application is called the M-expression, which may be familiar to people coming from the Lisp language. The M-expression is the most general form of application, and it assumes the form of `noun[args]`.
 
