@@ -14,10 +14,13 @@ and doing the exercises in each part before moving on the next lesson.
 # Progress:
 Currently, the main introduction to ngn/k is complete. All major verbs and adverbs are covered.
 
-Planned Chapters:
+Planned Chapters (subject to change):
+- [ ] Tables in ngn/k
 - [ ] Embedding K on the web
-- [ ] Basics of `libk.so`
-- [ ] using the FFI to make an application (undecided what application) 
+- [ ] Basics of `libk.so` FFI
+- [ ] FFI: stream based I/O
+- [ ] FFI: making web requests, using sockets
+- [ ] FFI: making a GUI application
 - [ ] using K from Python
 
 # Credits
