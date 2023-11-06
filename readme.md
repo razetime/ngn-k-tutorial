@@ -34,3 +34,4 @@ Planned Chapters (subject to change):
  - @chrispsn, @Traws, @ColTim for ideas on the Prelude chapter, and primitive implementations
  - @HoosierEE for help with proofreading and many useful edits
  - @DiscoDoug for a lot of help with writing the sudoku chapter
+ - [/u/mandus](https://old.reddit.com/u/mandus) for reminding me that I had exercises on this tutorial
