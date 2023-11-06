@@ -11,15 +11,21 @@ step by step.
 Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary
 and doing the exercises in each part before moving on the next lesson.
 
+If you are feeling stuck with the tutorial's content or exercises, please come to the [ngn/k room on matrix](https://app.element.io/#/room/#ngnk:matrix.org)
+(recommended), the [APL farm](https://aplwiki.com/wiki/APL_Farm), or just open an issue here.
+
+If you would like to check your exercise solutions with mine, you can check the `code` folder.
+
 # Progress:
 Currently, the main introduction to ngn/k is complete. All major verbs and adverbs are covered.
 
 Planned Chapters (subject to change):
-- [ ] Tables in ngn/k
+- [ ] Tables and files in ngn/k
 - [ ] Embedding K on the web
 - [ ] Basics of `libk.so` FFI
 - [ ] FFI: stream based I/O
 - [ ] FFI: making web requests, using sockets
+- [ ] FFI: communicating with IRC
 - [ ] FFI: making a GUI application
 - [ ] using K from Python
 
