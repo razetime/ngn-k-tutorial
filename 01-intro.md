@@ -198,22 +198,25 @@ Every verb in K can take 1 or two arguments. K programmers often call the 2-argu
 You can append a colon `:` after a verb to make sure that it executes with only one argument (monadic).
 
 
-K has 22 primitive verbs and 6 primitive adverbs. They do different things depending on both the **type** and **number** of arguments given, leading to more than 70 different kinds of functionality for the K programmer to use. Every primitive has an important usecase, and remembering these can be a challenge when you're starting out.
+K has 22 primitive verbs and 6 primitive adverbs. They do different things depending on both the **type** and **number** of arguments given, leading to more than 70 unique functions the K programmer can use. Every primitive has an important usecase, and remembering these can be a challenge when you're starting out.
 
 The overloads of each primitive verb are usually inter-related and are easy to understand. Once you get the hang of them, you will have the tools to create any program you like. We will cover the functionality of K's primitives, their overloads, and their basic usecases in this tutorial. 
 
 
 ## Vocabulary from this lesson
 
-- Noun: any defined value.
-- Verb: is a primitive function that can be used infix, and operates on nouns.
-- Adverb: is a primitive higher order function that creates a new function from a given verb, or function noun.
-- Atom: is any value that is not an array (symbol, character, integer, float).
-- Monad(ic): Single argument function.
-- Dyad(ic): Two argument function.
-- Conforming: an operation that works on the atoms of its arguments.
+- Noun: Any defined value in K.
+- Verb: A primitive function that can be used infix, and operates on nouns.
+- Adverb: A primitive higher order function that creates a new function from a given verb, or function noun.
+  Adverbs are part of K's syntax itself.
+- Atom: Any value that is not an array (function, symbol, character, integer, float).
+- Monad/Monadic Function: Single argument function.
+- Dyad/Dyadic Function: Two argument function.
+- Conforming Operation: An operation that works on the lowest level of nesting it can work with.
+  Most of K's verbs perform conforming operations.
 
 ## Exercises
-1. Guess the result of `1 2 3 + 4`, Then try it in the REPL.
-2. ngn/k has inbuilt documentation, available with `\` in the REPL. Try leafing through each help topic, and don't worry if you don't understand some things. The inbuilt documentation is the most complete and up-to-date cheatsheet on ngn/k, which will be very useful in the coming chapters.
+1. Guess the result of `1 2 3 + 4`, Try it in the REPL. Then try `1 2 3 + 4 5`. What does K say, and why?
+2. ngn/k has inbuilt documentation, available with `\` in the REPL. Try leafing through each help topic, and don't worry if you don't understand some things.
+   The inbuilt documentation is the most complete and up-to-date cheatsheet on ngn/k, which will be very useful in the coming chapters.
 3. Define an array with one integer, one character and one symbol.
