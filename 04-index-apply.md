@@ -1,4 +1,4 @@
-# Part 3: Indexing and Application
+# Part 4: Indexing and Application
 
 K is 0-indexed, which means arrays start at 0.
 
@@ -212,5 +212,5 @@ For dictonaries, it will index into each nested dictionary within, and pull out 
 
 ## Exercises
 - Get the third column of the array `4 4#!16` using a projection. Then do it without a projection.
-- Create a function that returns another function which always returns 1.
-- Write a function that sums each row of a 2 dimensional array.
+- What happens when you project outside the domain of a noun? What are the differences in arrays, functions and dictionaries?
+- Write a function to add the first two elements of an array, but do it without indexing.
