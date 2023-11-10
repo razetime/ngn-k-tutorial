@@ -265,6 +265,6 @@ Remember that filter and filter-out are verbs, and hence expect function values 
 - Binary Search: A search that can find the position an element should be inserted after in a sorted array.
 
 ## Exercises
-1. *Converge* is a special case of while. Given a monadic function `g` and argument `z`, write `g/z` using a while.
+1. *Converge* (`g/ z`) is a special case of while. Implement your own converge function using a while.
 2. Implement a function that converts a number to a list of digits in a given base (use while/fixpoint).
 
