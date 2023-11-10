@@ -8,7 +8,7 @@ This tutorial assumes you have some beginner programming knowledge, and a basic 
 The progression will start from explaining basic primitives, and move on to bigger concepts. The final few chapters will implement full programs in K,
 step by step.
 
-Each part of this tutorial will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary
+Each part of this tutorial covering the basics will have `Vocabulary` and `Exercise` (pending) sections at the end. I suggest getting familiar with the vocabulary
 and doing the exercises in each part before moving on the next lesson.
 
 If you are feeling stuck with the tutorial's content or exercises, please come to the [ngn/k room on matrix](https://app.element.io/#/room/#ngnk:matrix.org)

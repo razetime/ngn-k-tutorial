@@ -17,6 +17,8 @@ Given array `x`, indices `y` and monadic function `z`, Amend will apply `z` to t
 "Abc"
 ```
 
+This is useful when you don't want to use assignment to modify specific elements in an array.
+
 ### 4 Arguments (`@[x;y;z;u]`)
 
 Same as 3 argument amend, but `z` is dyadic, and `u` is the second argument provided to `z`.
@@ -39,7 +41,9 @@ Similar to 3 arguments, but with `z` dyadic, and `u` as the second argument.
 
 An error handling mechanism.
 
-`x` is a function, `y` is an array of arguments to `x`, and `z` is the function that is applied to the error message (see ch 11), if `x.y` fails. Otherwise returns `x.y`.
+`x` is a function, `y` is an array of arguments to `x`, and `z` is the function that is applied to the error message (see ch 11), if `x.y` fails.
+Otherwise returns `x.y`. *Try* is most useful when you are in deeper levels of nesting in a function, and print debugging with ` \` (trace) is not
+completely helpful.
 
 ```
  .[+;1 2;"E:",]
