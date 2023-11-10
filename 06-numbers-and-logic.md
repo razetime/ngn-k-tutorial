@@ -56,7 +56,7 @@ repeats their indices by their values:
 What makes `&` interesting is that it can also repeat an index 0 times, thereby discarding it.
 
 `&` can be used to filter elements based on a condition, like `{y@&x'y}`, which keep elements in `y` that satisfy predicate `x`.
-
++/
 If you want the index of the first element that holds true under a condition, you can use `*&`. But a simpler and more efficient alternative is `?` (find).
 
 ### `x?y` Find
@@ -115,5 +115,5 @@ Since these null values are not very easy to keep track of in an array, there ar
 ## Exercises
 1. Given an array `x` and a 'mask' array `y` consisting of zeroes and ones only, get the elements in `x` that are at the same positions
    as the ones in `y`. `f[2 7 89 92 -123;0 1 0 1 1]` -> `7 92 -123`.
-2. Create a dictionary from an array where they keys are the types of the elements in the array, and the values are the elements of the array.
+2. Create a dictionary from an array where the keys are the types of the elements in the array, and the values are the elements of the array.
 3. Create a function with two arguments `x` and `y`, which takes the sum of `x[y]` without nulls.

@@ -1,15 +1,17 @@
 # Dictionaries, Tables, Strings and other Miscellaneous functions
 
-Dictionaries and strings are not highly related, just that this chapter aims to show the rest of the verbs we have not covered in K, which happen to be mainly relating to dictionaries and strings. Think of it as a rapid-fire explanation of
+Dictionaries and strings are not highly related, just that this chapter aims to show the rest of the verbs we have not covered in K,
+which happen to be mainly relating to dictionaries and strings. Think of it as a rapid-fire explanation of their quirks.
 
 ## Dictionary Trivia
-Dictionaries are an *ordered collection*. this means that many primitives which work on arrays work similarly on dictionaries. This includes:
+Dictionaries are an *ordered collections*. This means that many primitives which work on arrays work similarly on dictionaries. This includes:
 
 - concat `,` (values in `y` overwrite values in `x`)
 - reverse `|` (reverses key array and value array separately)
 - map `'` (applies on values)
 - first `*` (first value from key-value pair only)
 - not `~`
+- at `@` preserves the structure of the dictionary when given as the second argument.
 - filter `#` and filter-out `_` (filter by value)
 - where `&` (keys are repeated by values)
 - grade up `<` and grade down `>` (sort keys by values)
@@ -120,6 +122,8 @@ Finally, `0N?x` where `x` is an array will shuffle `x`. If `x` is a number, then
 #### Base Decode and Encode (`\` and `/`)
 
 ngn/k's base conversion adverbs are generalized: this means that you can do mixed-radix conversion and other cool things.
+These adverbs will be familiar to APL programmers. Remember that these are adverbs, and not verbs. Some things you do with them may not work exactly as
+expected.
 
 The simplest use, and the most often use for this, is conversion to and from base 2:
 
@@ -184,10 +188,17 @@ Monadic `.` when given a string is eval. This will evaluate any string as K code
 3
 ```
 
-Dyadic `:` is right. it returns its right argument. `:` has many special meanings , so it is better to call 
+Dyadic `:` is right. it returns its right argument. `:` has many special meanings, so it is required to call
 `:` with an M-Expression:
 
 ```
  :[1 2; 3 4]
 3 4
 ```
+
+*no new vocabulary for this chapter.*
+
+## Exercises
+1. Write a function to convert seconds into hours, minutes and seconds, using `\`.
+2. Write a function that takes a list of numbers `x` and a number `y`. Group the numbers in `x` into a dictionary based on whether they are multiples
+  of `y`. `f[1 3 5 9;3]` -> `(0;1)!(1 5;3 9)`
