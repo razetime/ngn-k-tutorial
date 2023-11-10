@@ -1,6 +1,7 @@
 # Numbers and Logic
 
-K does not like branching, but it likes logic very much. What this means is that you will be doing a lot of interesting things with integers in order to avoid a branch.
+K does not like branching, but it likes logic very much. What this means is that you will be doing a lot of interesting things with integers in order to
+avoid a branch.
 
 The basic logical verbs of K are:
 - `>` greater than
@@ -15,13 +16,15 @@ The basic logical verbs of K are:
 The other comparison related verbs outside of these are Grade Up (`<`) and Grade Down (`>`). These 
 functions are the sorting functions of K.
 
-Grade Up and Down both return the indices of the values of the array in their final locations. Some would say that they generate a *permutation vector*. If that doesn't make sense, let me explain with code:
+Grade Up and Down both return the indices of the values of the array in their final locations. Some would say that they generate a *permutation vector*.
+The function`{x@<x}` sorts an array in ascending order, for example. Effectively, `<` and `>` allows you to sort an array using any other array
+as "weights", making it much more flexible.
 
-The function`{x@<x}` sorts an array in ascending order. Effectively, `<` and `>` allows you to sort an array with any other array. 
+All of the simple logical verbs, with the exception of *exact match* support conforming operations, and return `1` for true, and `0` for false. Since
+booleans are also numbers in K, this lets us do some interesting things with them.
 
-All of the simple logical verbs, with the exception of *exact match* support conforming operations, and return `1` for true, and `0` for false. Since booleans are also numbers in K, this lets us do some interesting things with them.
-
-For example, let's say we want to increment all multiples of 2 in an array. Usually, one would check each number one at a time, and double it if it were even.
+For example, let's say we want to increment all multiples of 2 in an array. Usually, one would check each number one at a time, and double it
+if it were even.
 
 To check if a number is even, we can use *mod* (`atom ! array`):
 
@@ -71,7 +74,7 @@ where null values are found are in indexing, where an out of bounds index return
 **Null Values for each data type**
 | Type | Null |
 | ---- | ---- |
-| Integer | `0N` |
+|Integer | `0N` |
 | Float | `0n` |
 | Character | `" "` (Space) |
 | Symbol | `` ` `` (no characters after backtick) |
@@ -104,3 +107,13 @@ Since these null values are not very easy to keep track of in an array, there ar
  "A"
  "A")
 ```
+
+## Vocabulary from this lesson
+- Grade Up/Down: A special type of sorting function that provides indices of the final sorted values in the array.
+- Null Value: In K, every type has its own null value. Null values are placeholders, and all types of nulls can be detected with `^`.
+
+## Exercises
+1. Given an array `x` and a 'mask' array `y` consisting of zeroes and ones only, get the elements in `x` that are at the same positions
+   as the ones in `y`. `f[2 7 89 92 -123;0 1 0 1 1]` -> `7 92 -123`.
+2. Create a dictionary from an array where they keys are the types of the elements in the array, and the values are the elements of the array.
+3. Create a function with two arguments `x` and `y`, which takes the sum of `x[y]` without nulls.
