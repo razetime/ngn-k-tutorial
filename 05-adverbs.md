@@ -1,10 +1,12 @@
-# Part 4: Adverbs
+# Part 5: Adverbs
 
-Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions (`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they move through each element of the arrays given to them. 
+Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions
+(`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they
+move through each element of the arrays given to them.
 
 Even with the power of recursion and branching, you will often find yourself in predicaments where these just 
 do not fit the task.
-K's general design lends itself strongly towards functional programming, and many of its adverbs help omit 
+K's general design lends itself strongly towards some aspects of functional programming, and many of its adverbs help omit
 loops and branching to solve tasks concisely and quickly.
 
 If you are acquainted with functional programming already, `'` is map, `'` (dyadic) is zip, `/` is foldl, and `\` is scanl.
@@ -247,5 +249,7 @@ Scans are also one of the main ways that K lets you access intermediate values f
 
 ## Exercises
 1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single fold.
-2. ngn/k's primitive symbols can be found in this page: https://k.miraheze.org/wiki/Primitives. Experiment with folds using any primitives you like. What unexpected things happen?
+2. Write a function to sum each row of an array.
 3. Convert an array of base-2 digits to a base-10 integer using a fold. `f/1 0 1` -> `5`.
+4. Write a function to get the prefixes of an array using an adverb: `f 1 2 3` -> `(,1;1 2;1 2 3)
+

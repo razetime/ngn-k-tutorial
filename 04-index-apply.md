@@ -211,6 +211,6 @@ For dictonaries, it will index into each nested dictionary within, and pull out 
  - Projection: A partially applied value, obtained by incomplete indexing.
 
 ## Exercises
-- Get the third column of the array `4 4#!16` using a projection. Then do it without a projection.
-- What happens when you project outside the domain of a noun? What are the differences in arrays, functions and dictionaries?
-- Write a function to add the first two elements of an array, but do it without indexing.
+1. Get the third column of the array `4 4#!16` using a projection. Then do it without a projection.
+2. What happens when you project outside the domain of a noun? What are the differences in arrays, functions and dictionaries?
+3. Write a function to add the first two elements of an array, but do it without indexing.
