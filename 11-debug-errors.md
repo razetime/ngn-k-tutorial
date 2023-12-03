@@ -32,7 +32,9 @@ A parse error means that the K interpreter has found malformed code. This is als
 ```
 
 ### `'rank`
-A rank error occurs when a primitive is given a number of arguments that it does not have an overload for.
+A rank error occurs when a primitive is called with arguments it does not have
+an overload for. This can be due to mismatched argument types, or a mismatched
+number of arguments.
 
 **Example:**
 ```
