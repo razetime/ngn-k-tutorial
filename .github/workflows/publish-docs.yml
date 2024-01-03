@@ -1,0 +1,61 @@
+name: Publish docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.md'
+  # Allow manual runs from Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages:    write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build docs
+    runs-on: ubuntu-latest
+    container:
+      image: docker://pandoc/core:3.1
+      options: --entrypoint=sh
+    steps:
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare output dir
+        run: |
+          apk add tar
+          mkdir output
+      - name: build_epub
+        run: |
+          pandoc --from markdown --to epub3 ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.epub
+      - name: build_html
+        run: |
+          pandoc --from markdown --to chunkedhtml ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output docs.zip
+          cd output
+          unzip ../docs.zip
+          rm ../docs.zip
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
