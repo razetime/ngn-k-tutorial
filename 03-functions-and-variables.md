@@ -161,6 +161,7 @@ However, this means that the entire program will have access to variable `a`. Gl
 A *train* is a way of representing simple function composition.
 
 There are some important things to remember when writing trains:
+
 - A train is a list of verbs, and their left arguments if applicable.
 - A verb with a `:` after it will only be called with one argument. Without the colon, it is always called with two arguments. This applies to all places where you use verbs, but is especially useful in trains.
 - A verb which does not have a `:` after it *must* have a left argument specified i.e `(+-)` is not a valid train but `(1+-)` is, since `+` is given left argument `1` and `+:-` is, since `+` only takes a single argument.
@@ -179,6 +180,7 @@ b) multiplying it by 2 (conforming) - `2*`
 c) adding 1 to it (conforming) - `1+`
 
 to convert this to a train, we have to specify arities:
+
 - `!` is called monadically: `!:`
 - `*` is called dyadically: `2*`
 - `+` is called dyadically: `1+`
