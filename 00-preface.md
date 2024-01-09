@@ -2,9 +2,9 @@
 
 You may access this book in the following formats:
 
-- Website: https://razetime.github.io/ngn-k-tutorial
-- PDF: https://razetime.github.io/ngn-k-tutorial/ngn_k_tutorial.pdf
-- EPUB: https://razetime.github.io/ngn-k-tutorial/ngn_k_tutorial.epub
+- [Website](https://razetime.github.io/ngn-k-tutorial)
+- [PDF](https://razetime.github.io/ngn-k-tutorial/ngn_k_tutorial.pdf)
+- [EPUB](https://razetime.github.io/ngn-k-tutorial/ngn_k_tutorial.epub)
 
 This book would not have been possible without the help of
 [ngn](https://ngn.codeberg.page)'s dedicated work
