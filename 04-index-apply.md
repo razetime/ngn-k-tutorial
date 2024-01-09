@@ -1,4 +1,4 @@
-# Part 4: Indexing and Application
+# Indexing and Application
 
 K is 0-indexed, which means arrays start at 0.
 

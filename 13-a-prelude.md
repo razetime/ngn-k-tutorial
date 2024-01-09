@@ -5,10 +5,11 @@ symbols to work with, many people build their own K preludes, which contain thin
 regularly. 
 
 Apart from words, ngn/k allows unicode verbs, if you are into that:
-```
-(≠):~=
-(≠:):   / Insert monadic ≠ here
-```
+<pre>
+(&#8800;):~=
+(&#8800;:):   / Insert monadic ≠ here
+</pre>
+
 The unicode symbols must always be put in parentheses, and you can omit either definition. 
 
 Unicode verbs occupy the same class as primitive verbs i.e. they can be used infix in a K expression once they

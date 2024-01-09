@@ -52,6 +52,7 @@ matmul: {
   C}
 ```
 This is the worst K code I've ever written, because we are trying to write K like an imperative language, and K doesn't work well with that design. The main problems are:
+
 - Many, many globals are assigned
 - multiple nested loops
 - lots of modification
@@ -92,6 +93,7 @@ The next global we can remove is `C`. Since `'` (each) returns an array, C doesn
 ```
 
 Now, we have three loops with no modification, which makes our job much easier. The main variables to look at now are `i`, `j`, and `k`.
+
 - `i` indexes each row of A.
 - `j` indexes each column of B.
 - `k` indexes each column of A and row of B.

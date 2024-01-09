@@ -112,6 +112,7 @@ A stack overflow happens when a function recursively calls itself too much.
 
 ### `'io`
 An IO error happens when there is a problem during the usage of an I/O verb. This can be:
+
 - A file permissions problem
 - file access problem
 - problem with the path given to the verb
@@ -121,6 +122,7 @@ ngn/k first compiles your code to bytecode. This indicates a problem in the byte
 
 ### `'limit`
 All functions in ngn/k K have the following limits:
+
 - 8 local variables (including parameters)
 - max bytecode size per function - 256 bytes
 
