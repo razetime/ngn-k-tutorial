@@ -12,8 +12,6 @@ horizons of what a programming language should look like, and how it should be u
 designed for its job has its own profound benefits, and K proves that rule very well. If you are looking for a 
 new way to look at programming and you want to have fun, you are in the right place.
 
-Note: You can get this document in EPUB form [here](ngn_k_tutorial.epub).
-
 Part of K's design was to improve upon some of APL's issues. At a glance, the most noticeable improvements are:
 
 - You can type K on an ordinary QWERTY keyboard with no extra software.
