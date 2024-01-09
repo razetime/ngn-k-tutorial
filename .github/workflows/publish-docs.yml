@@ -45,7 +45,7 @@ jobs:
           cd output
           unzip ../docs.zip
           rm ../docs.zip
-      - name: build_html
+      - name: build_pdf
         run: |
           pandoc --from markdown --to pdf ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
    - name: Upload artifact
