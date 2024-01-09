@@ -1,6 +1,10 @@
 # ngn-k-tutorial
 An [ngn/k](https://codeberg.org/ngn/k) tutorial.
 
+- Website: https://razetime.github.io/ngn-k-tutorial
+- PDF: https://razetime.github.io/ngn-k-tutorial/ngn_k_tutorial.pdf
+- EPUB: https://razetime.github.io/ngn-k-tutorial/ngn_k_tutorial.epub
+
 ## How to use this tutorial
 
 This tutorial assumes you have some beginner programming knowledge, and a basic understanding of what arrays are.
