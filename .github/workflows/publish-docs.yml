@@ -47,7 +47,7 @@ jobs:
           rm ../docs.zip
       - name: build_pdf
         run: |
-          pandoc --from markdown --to pdf ??-*.md --pdf-engine --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
+          pandoc --from markdown --to pdf ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
