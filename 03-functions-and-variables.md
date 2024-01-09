@@ -1,4 +1,4 @@
-# Part 2: Functions and Defining Variables
+# Functions and Defining Variables
 
 Now that you have an endless supply of array creation power, you now have to find a way to reuse those neat little arrays.
 

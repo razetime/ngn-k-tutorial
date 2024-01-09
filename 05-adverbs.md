@@ -1,4 +1,4 @@
-# Part 5: Adverbs
+# Adverbs
 
 Any respectable programming language will have its own forms of looping. You have already seen one form of looping in K's recursive functions
 (`o`, function self reference). But even outside of recursion, you have seen K's looping through K's conforming operations, since they
