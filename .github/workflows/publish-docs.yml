@@ -24,7 +24,7 @@ jobs:
     name: Build docs
     runs-on: ubuntu-latest
     container:
-      image: docker://pandoc/core:3.1
+      image: docker://pandoc/latex:latest
       options: --entrypoint=sh
     steps:
       - name: Setup Pages
@@ -47,8 +47,8 @@ jobs:
           rm ../docs.zip
       - name: build_pdf
         run: |
-          pandoc --from markdown --to pdf ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
-   - name: Upload artifact
+          pandoc --from markdown --to pdf ??-*.md --pdf-engine --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: output
