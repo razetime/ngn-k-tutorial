@@ -39,3 +39,4 @@ Planned Chapters (subject to change):
  - @HoosierEE for help with proofreading and many useful edits
  - @DiscoDoug for a lot of help with writing the sudoku chapter
  - [/u/mandus](https://old.reddit.com/u/mandus) for reminding me that I had exercises on this tutorial
+ - @DestyNova for setting up the workflows required for the website, epub and pdf.
