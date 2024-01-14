@@ -204,7 +204,7 @@ For an array, a projection will take all elements from the nth dimension of an a
 1 4 7
 ```
 
-For dictonaries, it will index into each nested dictionary within, and pull out the respective values:
+For dictionaries, it will index into each nested dictionary within, and pull out the respective values:
 ```
  (1 2 3!(3#,1 2 3!4 5 6))[;2]
 1 2 3!5 5 5
