@@ -119,7 +119,7 @@ You can also omit a dimension in reshape using `0N` (a null value), like so:
 ```
 This will automatically split the array to fit in the given dimension constraint.
 
-Like with `@`, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `2 5`. Indexing always covers a rectangular area regardless of number of dimensions.
+Like with `@`, you can also use arrays to index into any dimension: `a[0 1;2]` will give you `3 6`. Indexing always covers a rectangular area regardless of number of dimensions.
 
 The final form of application is dot (`.`).
 
