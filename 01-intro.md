@@ -94,7 +94,9 @@ The things that you can put in an array are called **Nouns**. These can be:
 
 - Numbers, which can be simple integers or floating point numbers.
 - Characters, which are enclosed in double quotes
-- Symbols, which are a series of alphanumeric or `.` characters preceded by a backtick, like `` `.symbol123``. Symbol names cannot start with a number.
+- Symbols, which are a series of alphanumeric or `.` characters preceded by a backtick, like `` `.symbol123``.
+  - Symbol names cannot start with a number.
+  - Symbols can be made from arbitrary strings using double quotes: `` `"symbol with spaces"``
 - Other Arrays
 - Functions and dictionaries, which we will discuss later. 
 
