@@ -188,17 +188,6 @@ Sum and Product seem OK, but `|/` and `&/` have two meanings, since max and min 
 1
 ```
 
-Scan is the same as fold, *except* it will also give you the intermediate values of the fold:
-
-```
-+\1 2 3 4 5       = 1 3 6 10 15
-  1               = 1 
-  1+2             = 3
-    3+3           = 6
-      6+4         = 10
-       10+5       = 15
-```
-
 
 
 ### `x f\ y` Scan (Scan from left)
@@ -211,32 +200,51 @@ Scan is the same as fold, *except* it will also give you the intermediate values
 
 
 
-Scans are useful all by themselves, but they are also *very* useful for debugging fold functions and finding out what's going wrong midway.
+Scan is the same as fold, *except* it will also give you the intermediate values of the fold. 
 
-Scans are also one of the main ways that K lets you access intermediate values from loops, making it widely useful. `\` and `/` are two of the most important, multipurpose symbols in K.
-
-```
- {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
-(1 2 3
- 4 5 6
- 7 8 9
- 29 42 57)
-```
-```
- {x+y*z}/[1 2 3; 4 5 6; 7 8 9]
-29 42 57
-```
-
-*Fold* and *scan* both use the first argument as initial value, and the rest of the arguments as input arrays.
 
 ```
- {x+y*z}/[1; 1 2 3; 4 5 6; 7 8 9]
-29 42 57
- {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
-(1 2 3
- 4 5 6
- 7 8 9
- 29 42 57)
++\1 2 3 4 5       = 1 3 6 10 15
+  1               = 1 
+  1+2             = 3
+    3+3           = 6
+      6+4         = 10
+       10+5       = 15
+```
+
+They are useful all by themselves, but they are also *very* useful for debugging fold functions and finding out what's going wrong midway.
+```
+ */7#1000
+3875820019684212736
+
+ *\7#1000
+1000 1000000 1000000000 1000000000000 1000000000000000 1000000000000000000 3875820019684212736
+```
+In the above example, we can see that integer overflow resulted in an "incorrect" result.
+
+Scans are often useful with boolean functions (i.e. `<`, `=`, `>`, `&`, `|`). For example, to "turn off" all `1`s that appear after the first `0`, we can use:
+```
+ &\1 1 1 0 0 1 1 1 0 1 0 1
+1 1 1 0 0 0 0 0 0 0 0 0
+```
+
+Scans are also one of the main ways that K lets you access intermediate values from loops, making it widely useful. For example, to count or number runs of `1`s in some boolean input:
+```
+ {y+x*y}\1 1 1 0 0 1 1 1 0 1 0 1
+1 2 3 0 0 1 2 3 0 1 0 1
+```
+
+*Fold* and *scan* both use the first argument as initial value, and the rest of the arguments as input arrays. Note that scans of empty inputs return the (empty) input unchanged.
+
+```
+ 4+\1 2 3
+5 7 10
+ 0+\()
+()
+ 2*\7 8 9
+14 112 1008
+ 1*\()
+()
 ```
 
 ## Vocabulary from this lesson
@@ -251,5 +259,5 @@ Scans are also one of the main ways that K lets you access intermediate values f
 1. `|` when used with a single argument, reverses an array. Instead, reverse an array with the usage of a single fold.
 2. Write a function to sum each row of an array.
 3. Convert an array of base-2 digits to a base-10 integer using a fold. `f/1 0 1` -> `5`.
-4. Write a function to get the prefixes of an array using an adverb: `f 1 2 3` -> `(,1;1 2;1 2 3)
+4. Write a function to get the prefixes of an array using an adverb: `f 1 2 3` -> `(,1;1 2;1 2 3)`
 
