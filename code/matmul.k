@@ -107,3 +107,4 @@ matmul: {x(+/*)\:y}
 matmul: (+/*)\:
 
 matmul[3 3#!9;=3]
+
