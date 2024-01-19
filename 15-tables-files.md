@@ -62,7 +62,6 @@ The same goes for `_`.
 +`a`b!(,1;,3)
 ```
 
-<!--
 Updates to a table have to be done with indexing. An SQL group by query had to
 be done with `=`, which returns a dictionary that has to be reconstituted into
 a table.
@@ -71,7 +70,6 @@ a table.
  t:+`a`b!(!10;10?10)
  ,/t@=2!t@`a
 ```
--->
 
 ## File Model
 ngn/k's file I/O is based on the UNIX model of file management. It is best to
