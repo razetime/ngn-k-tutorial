@@ -1,7 +1,8 @@
 # A Sudoku program
 
 Sudoku is great array task for K since it deals with small 2D arrays and it can be solved very nicely with array based methods.
-In this chapter, we will make a fully featured Sudoku game in K.
+In this chapter, we will make a fully featured Sudoku game in K. This chapter will feature longer K snippets, and it will
+test your ability to read K.
 
 If you do not know what Sudoku is, I suggest reading [these articles](http://pi.math.cornell.edu/~mec/Summer2009/Mahmood/Intro.html).
 
