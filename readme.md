@@ -24,7 +24,6 @@ If you would like to check your exercise solutions with mine, you can check the 
 Currently, the main introduction to ngn/k is complete. All major verbs and adverbs are covered.
 
 Planned Chapters (subject to change):
-- [ ] Tables and files in ngn/k
 - [ ] Embedding K on the web
 - [ ] Basics of `libk.so` FFI
 - [ ] FFI: stream based I/O
