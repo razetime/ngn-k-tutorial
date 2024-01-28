@@ -6,6 +6,6 @@
 
 / 3. Create the array `(1 2 3;4 5 6)` with the help of the verbs you learned in the previous chapter.
 /    Then, make a dictionary with the first row as keys, and the second row as values.
-a:2 3#1+!6 / (1 2 3;4 5 6)
-a[0]!a[1]  / makes the dictionary.
+(a;b):2 3#1+!6 / (1 2 3;4 5 6)
+a!b  / makes the dictionary.
 
