@@ -20,7 +20,10 @@ APL's more math oriented sides.
 - K adds and removes features on every iteration of its design. This lets it refine its design better than 
 languages which are forced to maintain backward compatibility, like APL, or even Python.
 
-Each one of K's major iterations is called a *dialect*. In this tutorial, we will learn about [ngn/k](https://codeberg.org/ngn/k), an open source version of the K6 dialect. 
+Each one of K's major iterations is called a *dialect*. In this tutorial, we
+will learn about [ngn/k](https://codeberg.org/ngn/k), an open source
+implementation of the K6 dialect. Learning ngn/k will give you the
+fundamentals required to understand any K dialect.
 
 K takes some time and effort to learn, just like any language. However, K is designed to be simple. Most of K's 
 basic concepts can be finished in an afternoon. Some parts of K will be hard to digest coming from a different 
