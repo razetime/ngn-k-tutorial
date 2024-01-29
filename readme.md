@@ -20,17 +20,12 @@ If you are feeling stuck with the tutorial's content or exercises, please come t
 
 If you would like to check your exercise solutions with mine, you can check the `code` folder.
 
-# Progress:
-Currently, the main introduction to ngn/k is complete. All major verbs and adverbs are covered.
+# Progress
+This tutorial is complete, and will not see the addition of any further
+chapters, unless ngn/k undergoes new changes.
 
-Planned Chapters (subject to change):
-- [ ] Embedding K on the web
-- [ ] Basics of `libk.so` FFI
-- [ ] FFI: stream based I/O
-- [ ] FFI: making web requests, using sockets
-- [ ] FFI: communicating with IRC
-- [ ] FFI: making a GUI application
-- [ ] using K from Python
+Any other chapter ideas that were previously here may be covered in separate
+articles, outside this book. No promises though :)
 
 # Credits
  - [ngn](https://codeberg.org/ngn/k) many tidbits and useful knowledge on the workings of ngn/k
@@ -39,3 +34,6 @@ Planned Chapters (subject to change):
  - @DiscoDoug for a lot of help with writing the sudoku chapter
  - [/u/mandus](https://old.reddit.com/u/mandus) for reminding me that I had exercises on this tutorial
  - @DestyNova for setting up the workflows required for the website, epub and pdf.
+
+Finally, thanks to all the proofreaders who helped me ensure the quality of
+this book over the two years spent writing it.
