@@ -34,6 +34,7 @@ articles, outside this book. No promises though :)
  - @DiscoDoug for a lot of help with writing the sudoku chapter
  - [/u/mandus](https://old.reddit.com/u/mandus) for reminding me that I had exercises on this tutorial
  - @DestyNova for setting up the workflows required for the website, epub and pdf.
+ - @yakubin for their help on correcting folds and scans
 
 Finally, thanks to all the proofreaders who helped me ensure the quality of
 this book over the two years spent writing it.
