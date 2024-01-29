@@ -247,6 +247,52 @@ Scans are also one of the main ways that K lets you access intermediate values f
 ()
 ```
 
+## Iterated Fold and Scan
+
+Fold and Scan both have overloads for more than two arguments. We will
+be looking at examples of iterated scan only, since fold returns the
+last result of scan anyway.
+
+### `f\[x;...y]` Iterated Scan
+
+**Symbol:** `\`
+
+**Args:** `n-ad\[int;...arrays]`
+
+**Description:** The length of `arrays` and the argument count of `n-ad` must
+be the same.
+- Do the following steps `x` times:
+- Take the last `x` elements of `arrays`, call this `last`
+- Add the result of `f.last` to the end of `arrays`
+- Return the first `x+1` elements of `arrays`.
+
+A simple use of this is to construct the fibonacci sequence:
+```
+ +\[10;0;1]
+0 1 1 2 3 5 8 13 21 34 55
+```
+
+There is another overload for this scan, where `x` is a list. In that case,
+`x` is treated as an initial value of sorts, and the `arrays` are iterated
+through. The first value is `f.(,x),arrays[;0]`, then `x` is set to that value.
+The next iteration we use `arrays[;1]`, and so on.
+You can see the difference with this example:
+
+```
+ {x+y*z}\[3; 1 2 3; 4 5 6;7 8 9]
+(1 2 3
+ 4 5 6
+ 7 8 9
+ 29 42 57)
+ {x+y*z}\[1 2 3; 4 5 6;7 8 9]
+(29 30 31
+ 69 70 71
+ 123 124 125)
+```
+
+Similar to ordinary fold/scan, the iterated versions simplify stateful
+computation. However, these overloads tend to be more niche in their use.
+
 ## Vocabulary from this lesson
 - Adverb: A syntactic form which acts like a higher order function on both nouns and verbs.
 - Each: Zap each element with function
