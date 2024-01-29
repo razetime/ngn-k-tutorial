@@ -130,7 +130,7 @@ variables, and then use the [Integer Functions](https://gmplib.org/manual/Intege
 as per the documentation. The result will be an `mpz_t`. This can be converted
 to a C string, then converted to a K string. So the last few lines of `add()` become:
 
-```
+```c
   mpz_t big_a,big_b,r;
   mpz_init_set_str(big_a,ac,10);mpz_init_set_str(big_b,bc,10);mpz_init(r);
   mpz_add(r,big_a,big_b);
