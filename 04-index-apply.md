@@ -180,6 +180,13 @@ To fix this, we should instead pass `a` via projection:
 
 as compared to assigning to `a` globally (`f:{a::x;{a+y}}`), this keeps data within the function, and makes the function side-effect free. This is not only useful in K, but helps for any programming task in general.
 
+We can also express this using the shorthand for partial application:
+
+```
+ f:{a:x;+[a;]}[1]
+ f[3]
+4
+```
 
 Now, if you remember from the beginning of this chapter, functions, arrays and dictionaries are all treated the same way in K. So projections can *also* apply to arrays and dictionaries!
 
@@ -197,7 +204,7 @@ For an array, a projection will take all elements from the nth dimension of an a
 1 4 7
 ```
 
-For dictonaries, it will index into each nested dictionary within, and pull out the respective values:
+For dictionaries, it will index into each nested dictionary within, and pull out the respective values:
 ```
  (1 2 3!(3#,1 2 3!4 5 6))[;2]
 1 2 3!5 5 5

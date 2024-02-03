@@ -72,6 +72,7 @@ signify the absence of a value, and generally denote a special value in a given 
 where null values are found are in indexing, where an out of bounds index returns a null value, and in find.
 
 **Null Values for each data type**
+
 | Type | Null |
 | ---- | ---- |
 |Integer | `0N` |
