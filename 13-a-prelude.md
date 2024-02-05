@@ -101,7 +101,7 @@ tan: {(sin x)%cos x}
 
 Finally, the power function is quite simple:
 ```
-pow:{*/y#x}`
+pow:{*/y#x}
 ```
 But this function only handles power for positive integer `y`. In order to get a generalized power function, we need to use 
 some math:
