@@ -38,18 +38,6 @@ The same overload for `\` will produce the intermediate values of the *for*, lik
 0 1 2 3
 ```
 
-When called with more than three arguments, *For* and *For scan* both use the first argument as initial value, and the rest of the arguments as input arrays.
-
-```
- {x+y*z}/[1; 1 2 3; 4 5 6; 7 8 9]
-29 42 57
- {x+y*z}\[1; 1 2 3; 4 5 6; 7 8 9]
-(1 2 3
- 4 5 6
- 7 8 9
- 29 42 57)
-```
-
 ### `f g/ z` While
 
 **Symbol:** `/`
