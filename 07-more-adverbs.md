@@ -190,7 +190,7 @@ Now that you have seen window, we can look at some more neat adverbs:
 - *base decode* (`int(x) / int(y)`) is the inverse of base encode.
 - *split* (`string(x) \ string(y)`) splits `y` on string `x`.
 - *join* (`string(x) / array(y)`) joins array `y` on string `x`.
-- *binary search* (`any(x) ' array(y)`) does a binary search for each element of `x` in `y`. If you do not know what a binary search is, I recommend reading [this article](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
+- *binary search* (`array(x) ' any(y)`) does a binary search for each element of `x` in `y`. If you do not know what a binary search is, I recommend reading [this article](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
 
 
 These *can* be implemented using the help of K's primitives (and K's philosophy does support that), but having them as symbols is quite convenient, since they are very commonly used.
