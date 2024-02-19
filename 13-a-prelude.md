@@ -49,8 +49,8 @@ Ceiling is the negation of negated floor:
 ```
 ceil:-_-:
 ```
-What we see here is that the name `ceil` is bigger than its definition. You can simply delete this, and remember `1+_` as ceil,
-cause that removes the need for a word. 
+What we see here is that the name `ceil` is bigger than its definition. You can simply delete this, and remember `-_-` as ceil,
+cause that removes the need for a word.
 
 In K, most of the time, it is better to 
 a) reuse a sequence of symbols that are shorter than a name
