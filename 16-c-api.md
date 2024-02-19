@@ -4,7 +4,7 @@ This chapter will require a working knowledge of C, and it will make use of C
 macros that are aimed at writing very terse code.
 
 It is often the case that you will find a gap in one of you favourite languages
-that K fills (and vice versa). This has led to porgrammers like [phantomics](https://github.com/phantomics)
+that K fills (and vice versa). This has led to programmers like [phantomics](https://github.com/phantomics)
 reimplementing APL for use as an embeddable language. Commercial K
 implementations also include a number of methods to do so. 
 
