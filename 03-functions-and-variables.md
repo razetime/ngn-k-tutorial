@@ -195,7 +195,7 @@ odds: 1+2*!:
 - Variable: a name that is assigned a value.
 - Lambda: General curly brace syntax for defining a function.
 - progn: A block of statements which returns the value of its last statement, unless specified otherwise with `:`.
-- Global variable: A variable that is avaiable to the entire program, assigned with `::`.
+- Global variable: A variable that is available to the entire program, assigned with `::`.
 - Dictionary: A noun that maps keys to values.
 - Train: A sequence of composed verbs and their left arguments.
 
