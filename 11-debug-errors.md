@@ -59,7 +59,7 @@ but the values of the arguments are not supported (they are not in the right dom
 **Examples:**
 ```
 (0;1 2)!3      / arrays cannot be keys
-&-1            / cannot repeat by negaitve amount
+&-1            / cannot repeat by negative amount
 1?-1           / negative range does not work
 1 2_()         / empty array cannot be dropped from
 -1 2_(1 2;3 4) / negative drop values do not work on a 2d array
@@ -83,7 +83,7 @@ A length error occurs when the lengths of two arguments do not conform to each o
 ### `'value`
 A value error occurs on variable names that are not declared yet.
 
-**Example:** `a+5` will error if `a` ia not defined.
+**Example:** `a+5` will error if `a` is not defined.
 
 ### `'nyi`
 NYI means not yet implemented. It triggers on overloads which are in ngn/k's design, but are not implemented yet.

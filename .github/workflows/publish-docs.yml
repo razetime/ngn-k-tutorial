@@ -38,16 +38,16 @@ jobs:
           mkdir output
       - name: build_epub
         run: |
-          pandoc --from gfm --to epub3 ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.epub
+          pandoc --from gfm+attributes --to epub3 ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.epub
       - name: build_html
         run: |
-          pandoc --from gfm --to chunkedhtml ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output docs.zip
+          pandoc --from gfm+attributes --to chunkedhtml ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output docs.zip
           cd output
           unzip ../docs.zip
           rm ../docs.zip
       - name: build_pdf
         run: |
-          pandoc --from gfm --to pdf ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
+          pandoc --from gfm+attributes --to pdf ??-*.md --number-sections --epub-title-page=false --toc --metadata title="ngn/k tutorial" --metadata author="razetime" --output output/ngn_k_tutorial.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
