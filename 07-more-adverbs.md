@@ -53,7 +53,7 @@ When given two monadic functions on the left, `/` acts as a while:
 5
 ```
 
-The truthy and falsy values for while are the same as it is for If(`$`). You can rehash on what they are by checking [Part 3](03-functions-and-variables.md).
+The truthy and falsy values for while are the same as it is for If(`$`). You can rehash on what they are by checking [Part 3](#-if).
 
 While-scan is quite self-explanatory (It provides the intermediate results of a while loop):
 ```
