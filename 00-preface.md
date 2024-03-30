@@ -1,4 +1,4 @@
-# Preface
+# Preface {.unnumbered}
 
 You may access this book in the following formats:
 
