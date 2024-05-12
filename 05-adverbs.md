@@ -262,7 +262,7 @@ last result of scan anyway.
 **Description:** The length of `arrays` and the argument count of `n-ad` must
 be the same.
 - Do the following steps `x` times:
-- Take the last `x` elements of `arrays`, call this `last`
+- Take the last `n` elements of `arrays`, call this `last`
 - Add the result of `f.last` to the end of `arrays`
 - Return the first `x+1` elements of `arrays`.
 
