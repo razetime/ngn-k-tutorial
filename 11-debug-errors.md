@@ -2,11 +2,21 @@
 
 *much of this chapter was populated with [ngn](https://ngn.bitbucket.io)'s help.*
 
-One thing that array languages used to be (and still are) notorious for are their terrible error messages.
-APL, J and K4 try to work around this problem with their debugging tools, but the problem still remains that errors are not very descriptive.
+One thing that array languages used to be (and still are) notorious for are
+their terse error messages. This is often a hill to climb for most programmers.
+APL, J and K4 try to work around this problem with their debugging tools, but
+the common thing that they all share is that errors are not very descriptive.
+Array language expect you to use your knowledge of the symbols to guide the
+debugging process.
 
-K does not have complex debugging tools available, and it has the worst errors that I know from an array language.
-This page will attempt to disambiguate all the possible errors that ngn/k can throw, and what can cause them.
+K does not have complex debugging tools available, and primarily favours print
+debugging. The types of errors that can happen are small in number, generally
+provide the position of the error, and errors
+take up very less space on screen. Hence, K debugging is usually simpler than
+one expects. If you like long, detailed explanations of what you need to do,
+then K may not be for you.
+
+This page will disambiguate all the possible errors that ngn/k can throw, and what can cause them.
 
 A K error will generally have a) an error name and b) A message prefixed with a quote and b) a few lines pointing to the code where the error happened.
 Errors will be disambiguated first on error name, then the situation it may appear in.
